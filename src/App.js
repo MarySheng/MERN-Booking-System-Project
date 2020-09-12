@@ -8,6 +8,7 @@ import Transaction from './components/transactions/Transaction';
 import TransactionSingle from './components/transactions/TransactionSingle';
 import Movie from './components/Movie';
 import ViewDetail from './components/singleView/ViewDetail';
+import EditMovie from './components/editMovies/EditMovie';
 import {
   BrowserRouter as Router,
   Switch,
@@ -60,6 +61,10 @@ function App() {
           <ViewDetail />
         </Route>
 
+        {/* Edit Movie */}
+        <Route exact path='/movies/:id/edit'>
+          <EditMovie />
+        </Route>
         
 
       </Switch>
