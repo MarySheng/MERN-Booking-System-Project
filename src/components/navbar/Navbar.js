@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link, NavLink} from 'react-router-dom';
 
 // const Navbar = ({authUser}) => {
-const Navbar = (props) => {
+  const Navbar = (props) => {
 
   return (
    <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -12,19 +12,22 @@ const Navbar = (props) => {
   </button>
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav mr-auto">
-        {/*Admin Dropdown*/}
+          {/*Admin Dropdown*/}
+          {/* {
+            authUser.isAdmin ? */}
+        <li className="nav-item dropdown">
+          <a id="adminDropdown" href=""
+            className="nav-link dropdown-toggle"
+            role="button"
+            data-toggle="dropdown">Admin</a>
+            <div className="dropdown-menu">
+                <NavLink exact to='/create' className="dropdown-item">Add Movie</NavLink>    
+            </div>
+              </li>
+              {/* : ""
+          } */}
 
-      <li class="nav-item dropdown">
-            <a id="adminDropdown" href=""
-              className="nav-link dropdown-toggle"
-              role="button"
-              data-toggle="dropdown">Admin</a>
-        <div class="dropdown-menu">
-            <NavLink exact to='/create' class="dropdown-item">Add Movie</NavLink>    
-        </div>
-      </li>
-
-                       
+                 
       <li className="nav-item">
         <NavLink className="nav-link" exact to="/">Movies</NavLink>
       </li>
@@ -39,7 +42,8 @@ const Navbar = (props) => {
           <NavLink className="nav-link" exact to="/booking">My Booking</NavLink>
         </li>
 
-        
+          {/* {
+            authUser.isAuth ? */}
           <>
           <li className="nav-item">
             <NavLink className="nav-link" to="/login">Login</NavLink>
@@ -47,12 +51,13 @@ const Navbar = (props) => {
           <li className="nav-item">
             <NavLink className="nav-link" exact to="/register">Register</NavLink>
           </li>
-          </>
-          
+              </>
+              {/* // : */}
           <li className="nav-item">
             <NavLink className="nav-link" to="/logout" >Logout</NavLink>
           </li>
-        
+          {/* // } */}
+          
       </ul>
   </div>
 </nav>

@@ -1,9 +1,91 @@
-import React from 'react';
+import React, {useState} from 'react';
 import InputGroup from './../inputs/InputGroup';
+import { Redirect } from 'react-router-dom';
+import AlertMessage from './../alertMessage/AlertMessage';
 
 const LoginForm = (props) => {
+
+    const [ credentials, setCredentials ] = useState({
+		email: "",
+		password: ""
+	});
+
+	const [alert, setAlert] = useState({
+		hasAlert: false,
+		color:"",
+		message: ""
+	});
+
+	const handleChange = e => {
+		setCredentials({
+			...credentials,
+			[e.target.name]:e.target.value
+		})
+	};
+
+	const [isSuccess, setIsSuccess] = useState(false);
+
+	// setting a loading when user click login button without putting credentials
+	const [isLoading, setIsLoading] = useState(false);
+
+
+	// after user login, it will redirect to home
+	if(isSuccess){
+		return <Redirect to="/" />
+	}
+
+	
+	const handleSubmit = e => {
+		e.preventDefault()
+		setIsLoading(true)
+
+		fetch(`https://booking-movie-backend.herokuapp.com/users/login`, {
+			method: "post",
+			body: JSON.stringify(credentials),
+			headers: {
+				"Content-Type" : "application/json"
+			}
+		})
+			 .then( response => {
+            if(response.status !== 200) {
+                setAlert({
+                    hasAlert: true,
+                    color: "danger",
+                    message : "Check your credentials" 
+                })
+            }else {
+            	setIsSuccess(true);	
+            }
+            return response.json()
+        })
+
+			.then(data => {
+				// check the token and save to local storage
+				// if(data.token){
+				// 	localStorage["appState"] = data.token
+				// 	props.setAuthUser({
+				// 		isAuth: true,
+				// 		fullname: data.fullname,
+				// 		email:data.email,
+				// 		isAdmin:data.isAdmin
+				// 	})
+				// 	setIsSuccess(true)
+				// }else {
+
+				// 	setIsLoading(false)
+				// }
+				console.log(data)
+			});
+
+    }
+    
     return (
-        <form>
+        <form onSubmit={handleSubmit}>
+            {
+     	alert.hasAlert ? 
+    	<AlertMessage color={alert.color} message={alert.message} />
+     	: <> </>
+     }
         <InputGroup
             type="email"
             name="email"
@@ -12,6 +94,7 @@ const LoginForm = (props) => {
             required
             autocomplete="email"
             autofocus
+            handleChange={handleChange}   
         />
         
         <InputGroup
@@ -21,11 +104,16 @@ const LoginForm = (props) => {
             placeholder="Password Here"
             required
             autofocus
+            handleChange={handleChange}
         />
         <div className="form-group row mb-0">
             <div className="col-md-6 offset-md-4">
-                <button type="submit" className="btn btn-primary">
-                        Login
+                <button type="submit" className="btn btn-primary" disabled={isLoading}>
+            {
+                isLoading ?
+                "Login..." :
+                "Login"
+            }
                 </button>
             </div>
         </div>

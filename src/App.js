@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Navbar from './components/navbar/Navbar';
 import Register from './components/register/Register'; 
 import Login from './components/login/Login';
@@ -17,9 +17,40 @@ import {
 
 
 function App() {
+
+  const [authUser, setAuthUser] = useState({
+    isAuth: false,
+    _id: "",
+    fullname: "",
+    email: ""
+  });
+
+  useEffect(() => {
+    let appState = localStorage["appSate"];
+    if (appState) {
+      fetch("https://booking-movie-backend.herokuapp.com/users/profile", {
+        headers: {
+          "Authorization" : `Bearer ${appState}`
+        }
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data._id) {
+            setAuthUser({
+              isAuth: true,
+              _id: data._id,
+              fullname: data.fullname,
+              email: data.email,
+              isAdmin: data.isAdmin
+            });
+          }
+        })
+    }
+  })
+
   return (
     <Router>
-    <Navbar />
+      <Navbar authUser={authUser} />
       <Switch>
         {/* Register */}
         <Route path='/register'>
