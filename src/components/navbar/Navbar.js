@@ -14,21 +14,13 @@ const Navbar = (props) => {
     <ul className="navbar-nav mr-auto">
         {/*Admin Dropdown*/}
 
-           {/* { */}
-                {/* // authUser.isAdmin ? */}
-            <li className="nav-item dropdown">
-              <a 
-                id="adminDropdown" 
-                href="" 
-                className="nav-link dropdown-toggle" 
-                role="button" 
-                data-toggle="dropdown">Admin</a>
-                <div className="dropdown-menu">
-                  <NavLink className="dropdown-item" to="/add">Add Movie</NavLink>
-                </div>
-            </li>
-            {/* //   : ""
-            // } */}
+      <li class="nav-item dropdown">
+        <a id="adminDropdown" href="" className="nav-link dropdown-toggle" role="button" data-toggle="dropdown">Admin</a>
+        <div class="dropdown-menu">
+            <NavLink to='/create' class="dropdown-item">Add Movie</NavLink>    
+        </div>
+      </li>
+
                        
       <li className="nav-item">
         <NavLink className="nav-link" exact to="/">Movies</NavLink>
@@ -44,8 +36,7 @@ const Navbar = (props) => {
           <NavLink className="nav-link" exact to="/booking">My Booking</NavLink>
         </li>
 
-        {/* { */}
-        {/* //   !authUser.isAuth ? */}
+        
           <>
           <li className="nav-item">
             <NavLink className="nav-link" to="/login">Login</NavLink>
@@ -54,11 +45,11 @@ const Navbar = (props) => {
             <NavLink className="nav-link" exact to="/register">Register</NavLink>
           </li>
           </>
-          {/* : */}
+          
           <li className="nav-item">
             <NavLink className="nav-link" to="/logout" >Logout</NavLink>
           </li>
-        {/* } */}
+        
       </ul>
   </div>
 </nav>

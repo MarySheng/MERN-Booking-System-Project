@@ -4,6 +4,8 @@ import Register from './components/register/Register';
 import Login from './components/login/Login';
 import AddMovie from './components/AddMovies/AddMovie';
 import Booking from './components/bookings/Booking';
+import Transaction from './components/transactions/Transaction';
+import TransactionSingle from './components/transactions/TransactionSingle';
 import {
   BrowserRouter as Router,
   Switch,
@@ -27,13 +29,23 @@ function App() {
         </Route>
 
         {/* AddMovie */}
-        <Route path='/add'>
+        <Route path='/create'>
           <AddMovie />
         </Route>
 
         {/* Booking */}
         <Route path='/booking'>
           <Booking />
+        </Route>
+
+        {/* Transaction */}
+        <Route exact path='/transactions'>
+          <Transaction />
+        </Route>
+
+        {/* Transaction Single */}
+        <Route exact path='/transactions/:id'>
+          <TransactionSingle />
         </Route>
 
       </Switch>
