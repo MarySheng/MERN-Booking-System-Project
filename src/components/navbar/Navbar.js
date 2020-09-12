@@ -24,7 +24,7 @@ const Navbar = (props) => {
                 role="button" 
                 data-toggle="dropdown">Admin</a>
                 <div className="dropdown-menu">
-                  <NavLink className="dropdown-item" to="/create">Add Movie</NavLink>
+                  <NavLink className="dropdown-item" to="/add">Add Movie</NavLink>
                 </div>
             </li>
             {/* //   : ""
