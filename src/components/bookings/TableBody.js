@@ -3,7 +3,7 @@ import React from 'react';
 const TableBody = (props) => {
     return (
         <tr>
-            <td scope="row">_Movie Name_</td>
+            <td scope="row">_booking.movieId.name_</td>
             <td>                
             <form>
             <div class="input-group mb-3">
@@ -12,7 +12,7 @@ const TableBody = (props) => {
                     min="1" 
                     name="quantity" 
                     class="form-control form-control-sm"
-                    value="{{$product->quantity}}"
+                    value="{booking.quantity}"
                />                                         
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary btn-sm" type="submit" id="button-addon2"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -24,9 +24,12 @@ const TableBody = (props) => {
             </div>
         </form>
 
-            </td>
-        <td>&#8369; _Movie Price_</td>
-        <td>&#8369;_MovieSubtotal_</td>
+        </td>
+        <td>
+            <input type="date" name="date" />
+        </td>
+        <td>&#8369; _booking.price_</td>
+        <td>&#8369;_booking.subtotal_</td>
         <td>
             <button class="btn btn-sm btn-outline-danger">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -27,7 +27,9 @@ const TableRow = (props) => {
          </form>
 
         </td>
-        <td>_booking.subtotal_</td>
+            <td><input type="date" name="date" /></td>
+            <td>_booking.subtotal_</td>
+
 
         {/* {
             withAction ? */}
