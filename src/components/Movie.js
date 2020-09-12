@@ -8,11 +8,21 @@ const Movie = () => {
 
     const [redirect, setRedirect] = useState(false);
 
+    const [deletedMovie, setDeletedMovie] = useState({});
+
     useEffect(() => {
         fetch("https://booking-movie-backend.herokuapp.com/movies")
             .then(response => { return response.json() })
             .then(movies => { setMovies(movies) })
     });
+
+    useEffect(() => {
+        if (deletedMovie) {
+            setMovies(movies.filter(movie => {
+                return movie._id !== deletedMovie._id
+            }))
+        }
+    },[deletedMovie])
 
 
 
@@ -21,7 +31,7 @@ const Movie = () => {
     let movieList = movies.map(movie => {
         return(
         <div className="col-12 col-md-3 mt-5" key={movie._id}>
-            <DisplayMovie movie={movie} setRedirect={setRedirect} />
+            <DisplayMovie movie={movie} setDeletedMovie={setDeletedMovie} setRedirect={setRedirect} />
         </div>
         )
     })

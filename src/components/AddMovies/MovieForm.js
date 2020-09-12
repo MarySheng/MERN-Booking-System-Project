@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import MovieInput from './../inputs/MovieInput';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+
 
 const MovieForm = (props) => {
 
