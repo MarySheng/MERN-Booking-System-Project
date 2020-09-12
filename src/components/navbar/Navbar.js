@@ -41,7 +41,7 @@ const Navbar = (props) => {
           <NavLink className="nav-link" exact to="/transactions">Transactions</NavLink>
         </li>
          <li className="nav-item">
-          <NavLink className="nav-link" exact to="/cart">Cart</NavLink>
+          <NavLink className="nav-link" exact to="/booking">My Booking</NavLink>
         </li>
 
         {/* { */}

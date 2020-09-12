@@ -3,6 +3,7 @@ import Navbar from './components/navbar/Navbar';
 import Register from './components/register/Register'; 
 import Login from './components/login/Login';
 import AddMovie from './components/AddMovies/AddMovie';
+import Booking from './components/bookings/Booking';
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,6 +29,11 @@ function App() {
         {/* AddMovie */}
         <Route path='/add'>
           <AddMovie />
+        </Route>
+
+        {/* Booking */}
+        <Route path='/booking'>
+          <Booking />
         </Route>
 
       </Switch>
