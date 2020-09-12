@@ -15,9 +15,12 @@ const Navbar = (props) => {
         {/*Admin Dropdown*/}
 
       <li class="nav-item dropdown">
-        <a id="adminDropdown" href="" className="nav-link dropdown-toggle" role="button" data-toggle="dropdown">Admin</a>
+            <a id="adminDropdown" href=""
+              className="nav-link dropdown-toggle"
+              role="button"
+              data-toggle="dropdown">Admin</a>
         <div class="dropdown-menu">
-            <NavLink to='/create' class="dropdown-item">Add Movie</NavLink>    
+            <NavLink exact to='/create' class="dropdown-item">Add Movie</NavLink>    
         </div>
       </li>
 
