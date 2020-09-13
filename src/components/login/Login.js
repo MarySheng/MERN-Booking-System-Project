@@ -3,9 +3,9 @@ import LoginForm from './LoginForm';
 import {Redirect} from 'react-router-dom';
 
 const Login = (props) => {
-    // if(props.authUser.isAuth){
-	// 	return <Redirect to="/" />
-	// }
+    if(props.authUser.isAuth){
+		return <Redirect to="/" />
+	}
 
     return (
         <div className="container">

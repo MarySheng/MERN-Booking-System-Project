@@ -17,8 +17,14 @@ const MovieForm = (props) => {
         image: {}
     });
 
+    const [redirectedRoute, setRedirectedRoute] = useState("")
+
     if (redirect.success) {
-        return <Redirect to={`/movies/${redirect.latestId}`} />
+        // if (redirectedRoute == "add_movie")
+            return <Redirect to={`/movies/${redirect.latestId}`} />
+        // else if (redirectedRoute === "booking"")
+        //             return <Redirect to={`/booking/${redirect.latestId}`} state: { id: '123'  />
+
     }
 
     const handleChange = e => {
@@ -27,6 +33,11 @@ const MovieForm = (props) => {
             [e.target.name]: e.target.value
         });
     };
+
+    // const onBooking = e => {
+    //     fetch().then()
+    //     setRedirectedRoute("booking")
+    // }
 
 
     const handleChangeFile = e => {

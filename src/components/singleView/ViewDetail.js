@@ -1,13 +1,17 @@
 import React, {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, Redirect} from 'react-router-dom';
 
 
-const ViewDetail = (props) => {
+const ViewDetail = ({setDeletedMovie}) => {
     let { id } = useParams();
 
     const [movie, setMovie] = useState({});
+  
+    const [isLoading, setIsLoading] = useState(true);
 
-    const [ isLoading, setIsLoading ] = useState(true);
+    const [redirect, setRedirect] = useState(false)
+    
+   
 
     useEffect(() => {
         fetch(`https://booking-movie-backend.herokuapp.com/movies/${id}`)
@@ -17,6 +21,28 @@ const ViewDetail = (props) => {
                 setIsLoading(false)
             })
     }, []);
+
+
+    const handleClick = () => {
+        fetch(`https://booking-movie-backend.herokuapp.com/movies/${id}`, {
+            method: "delete",
+            headers: {
+                "Authorization": `Bearer ${localStorage["appState"]}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setRedirect(true)
+                if (setDeletedMovie) {
+                    setDeletedMovie({_id: id})
+                }
+            })
+    }
+
+    if (redirect) {
+        return <Redirect to='/' />
+    }
 
 
     return (
@@ -48,8 +74,8 @@ const ViewDetail = (props) => {
                             </div>
                             <div className="row mt-3">
                                 <button className="btn btn-success btn-sm w-25 mr-3">Book Now</button>
-                                <button className="btn btn-warning btn-sm w-25 mr-3">Edit</button>
-                                <button className="btn btn-danger btn-sm w-25">Delete</button>
+                                <Link to={`/movies/${id}/edit`}  className="btn btn-warning btn-sm w-25 mr-3">Edit</Link>
+                                <button onClick={handleClick} className="btn btn-danger btn-sm w-25">Delete</button>
                             </div>
                         </div>
                 }

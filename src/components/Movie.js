@@ -14,7 +14,7 @@ const Movie = () => {
         fetch("https://booking-movie-backend.herokuapp.com/movies")
             .then(response => { return response.json() })
             .then(movies => { setMovies(movies) })
-    });
+    }, []);
 
     useEffect(() => {
         if (deletedMovie) {

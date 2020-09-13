@@ -67,7 +67,7 @@ const RegisterForm = (props) => {
 
             <InputGroup
                 type="text"
-                name="fulname"
+                name="fullname"
                 placeholder="Enter Name Here"
                 displayName="Fullname:"
                 required

@@ -60,7 +60,7 @@ function App() {
 
         {/* Login */}
         <Route path='/login'>
-          <Login />
+          <Login authUser={authUser} setAuthUser={setAuthUser} />
         </Route>
 
         {/* AddMovie */}
@@ -98,9 +98,8 @@ function App() {
           <EditMovie />
         </Route>
         
-        {/* Logout */}
         <Route path='/logout'>
-          <Logout setAuthUser={setAuthUser} />
+        <Logout setAuthUser={setAuthUser} />
         </Route>
 
       </Switch>

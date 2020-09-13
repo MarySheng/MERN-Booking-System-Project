@@ -61,19 +61,19 @@ const LoginForm = (props) => {
 
 			.then(data => {
 				// check the token and save to local storage
-				// if(data.token){
-				// 	localStorage["appState"] = data.token
-				// 	props.setAuthUser({
-				// 		isAuth: true,
-				// 		fullname: data.fullname,
-				// 		email:data.email,
-				// 		isAdmin:data.isAdmin
-				// 	})
-				// 	setIsSuccess(true)
-				// }else {
+				if(data.token){
+					localStorage["appState"] = data.token
+					props.setAuthUser({
+						isAuth: true,
+						fullname: data.fullname,
+						email:data.email,
+						isAdmin:data.isAdmin
+					})
+					setIsSuccess(true)
+				}else {
 
-				// 	setIsLoading(false)
-				// }
+					setIsLoading(false)
+				}
 				console.log(data)
 			});
 

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import MovieInput from './../inputs/MovieInput';
-import {Redirect} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 
 const EditMovieForm = (props) => {
 
@@ -73,7 +73,6 @@ const EditMovieForm = (props) => {
                 type="text"
                 value={movie.name}
                 required
-                autocomplete="name"
                 autofocus
                 handleChange={handleChange}
             />
