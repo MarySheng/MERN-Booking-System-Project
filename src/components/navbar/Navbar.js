@@ -17,7 +17,7 @@ import {Link, NavLink} from 'react-router-dom';
             authUser.isAdmin ? */}
         <li className="nav-item">
          
-          <NavLink exact to='/create' className="dropdown-item">Add Movie</NavLink>    
+          <NavLink exact to='/create' className="nav-link">Add Movie</NavLink>    
 
         </li>
 

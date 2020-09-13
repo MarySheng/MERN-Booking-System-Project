@@ -2,7 +2,13 @@ import React from 'react';
 import TableRow from './TableRow';
 import TableFooter from './TableFooter'
 
-const TransactionTable = (props) => {
+const TransactionTable = ({ bookings}) => {
+    
+    let bookingList = bookings.map(booking => {
+        return <TableRow key={booking._id} booking={booking} />
+    })
+
+
     return (
         <div className="table-responsive">
             <table className="table table-hover">
@@ -18,24 +24,17 @@ const TransactionTable = (props) => {
                         <th scope="col">Date</th>
                         {/* subtotal */}
                         <th scope="col">Subtotal</th>
-                        {/* action */}
-                        {/* { 
-                            withAction ?   */}
-                        <th scope="col">Action</th> 
-                            {/* :  <></>
-                        } */}
+                           
                     </tr>
                 </thead>
                 <tbody>
                     
-                    <TableRow />
+                    {bookingList}
 
                 </tbody>
-                {/* {
-                    withAction ?  */}
+
                 <TableFooter />
-                     {/* : <></>
-                } */}
+                   
             </table>
         </div> 
 
