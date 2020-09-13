@@ -9,6 +9,7 @@ import TransactionSingle from './components/transactions/TransactionSingle';
 import Movie from './components/Movie';
 import ViewDetail from './components/singleView/ViewDetail';
 import EditMovie from './components/editMovies/EditMovie';
+import Logout from './components/Logout';
 import {
   BrowserRouter as Router,
   Switch,
@@ -67,7 +68,7 @@ function App() {
           <AddMovie />
         </Route>
 
-        {/* Movies Ctalog */}
+        {/* Movies Catalog */}
         <Route exact path='/'>
             <Movie />
         </Route>
@@ -97,6 +98,10 @@ function App() {
           <EditMovie />
         </Route>
         
+        {/* Logout */}
+        <Route path='/logout'>
+          <Logout setAuthUser={setAuthUser} />
+        </Route>
 
       </Switch>
     </Router>
