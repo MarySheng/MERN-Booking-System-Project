@@ -1,0 +1,15 @@
+#addMovie {
+    font-family: 'Arvo', serif;
+    background-color: #0fabbc;
+    width: 30%;
+    border: 2px solid #12cad6;
+    border-radius: 25%;  
+}
+
+#editMovie{
+    font-family: 'Arvo', serif;
+    background-color: #ea907a;
+    width: 30%;
+    border: 2px solid #ffcb74;
+    border-radius: 25%;
+}

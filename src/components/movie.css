@@ -1,0 +1,74 @@
+#bookNow {
+    background-color: #e2979c;
+    border: 2px solid #e7305b;
+    width: 100%;
+    border-radius: 25%;
+}
+
+#detail {
+    background-color: #fa7d09;
+    width: 100%;
+    border: 2px solid #ff4301;
+    border-radius: 25%;    
+}
+
+#edit {
+    background-color: #ea907a;
+    width: 100%;
+    border: 2px solid #ffcb74;
+    border-radius: 25%;  
+    color: white;  
+}
+
+#delete {
+    background-color: #d92027;
+    width: 100%;
+    border: 2px solid #ff9234;
+    border-radius: 25%;    
+}
+
+
+.movie-header {
+  font-family: 'Arvo', serif;
+  margin-top: 90px;
+  color: white;
+  font-size: 40px;
+  mix-blend-mode: difference;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff5200, 0 0 40px #ff5200, 0 0 50px #ff5200, 0 0 60px #ff5200, 0 0 70px #ff5200;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #9a1f40, 0 0 40px #9a1f40, 0 0 50px #9a1f40, 0 0 60px #9a1f40, 0 0 70px #9a1f40, 0 0 80px #9a1f40;
+  }
+}
+
+#text-white {
+    color: white;
+    font-family: 'Arvo', serif;
+
+}
+
+#movieImg img {
+    margin-top: 50px;
+    height: 75%;
+}
+
+.movieName{
+    margin-top: 100px;
+}
+
+#back {
+     background-color: #63b7af;
+    width: 100%;
+    border: 2px solid #abf0e9;
+    border-radius: 25%;  
+    margin-top: 30px;
+}
+

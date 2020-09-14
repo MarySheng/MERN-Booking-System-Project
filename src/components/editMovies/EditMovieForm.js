@@ -97,7 +97,7 @@ const EditMovieForm = (props) => {
 
     	
 
-    <label htmlFor="description">Description:</label>
+    <label id="text-white" htmlFor="description">Description:</label>
     <br />
     <textarea 
     	className="form-control form-control-sm"  
@@ -108,7 +108,7 @@ const EditMovieForm = (props) => {
         value={movie.description}
         onChange={handleChange}></textarea>
     	<br />
-            <button className="submit btn-primary d-block btn-sm">Edit Movie</button>
+            <button id="editMovie" className="submit btn-primary d-block btn-sm">Edit Movie</button>
     </form>
     );
 }

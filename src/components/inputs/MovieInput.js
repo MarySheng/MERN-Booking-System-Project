@@ -3,7 +3,7 @@ import React from 'react';
 const MovieInput = (props) => {
     return (
       <div className="form-group">
-        <label htmlFor={props.name}>{props.displayName}</label>
+        <label id="text-white" htmlFor={props.name}>{props.displayName}</label>
         <input 
         	type={props.type} 
         	name={props.name} 

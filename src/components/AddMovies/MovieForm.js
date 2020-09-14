@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import MovieInput from './../inputs/MovieInput';
 import { Redirect } from 'react-router-dom';
+import './addMovie.css';
 
 
 const MovieForm = (props) => {
@@ -102,7 +103,7 @@ const MovieForm = (props) => {
 
     	
 
-    <label htmlFor="description">Description:</label>
+    <label id="text-white" htmlFor="description">Description:</label>
     <br />
     <textarea 
     	className="form-control form-control-sm"  
@@ -111,8 +112,8 @@ const MovieForm = (props) => {
     	cols="30" 
         rows="10"
         onChange={handleChange}></textarea>
-    	<br />
-            <button className="submit btn-primary d-block btn-sm">Add Movie</button>
+    	<br /> 
+            <button id="addMovie" className="submit btn-primary  btn-sm">Add Movie</button>
     </form>
     );
 }

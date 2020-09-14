@@ -30,7 +30,7 @@ const Movie = () => {
         
     let movieList = movies.map(movie => {
         return(
-        <div className="col-12 col-md-3 mt-5" key={movie._id}>
+        <div id="movieList" className="col-12 col-md-3 mt-5" key={movie._id}>
             <DisplayMovie movie={movie} setDeletedMovie={setDeletedMovie} setRedirect={setRedirect} />
         </div>
         )
@@ -42,11 +42,11 @@ const Movie = () => {
     return (
         <div className="container">
             <div className="row">
-                <div className="col-12 col-md-3 mx-auto" >
-                 <h1 className="text-center ">Movie Time</h1>
+                <div className="col-12 col-md-8 mx-auto" >
+                 <h1 className="text-center movie-header">Watch All You Can!</h1>
             </div>
             </div>
-            <div className="row mt-5">
+            <div className="row mt-5" >
                {movieList}                 
             </div>
         </div>

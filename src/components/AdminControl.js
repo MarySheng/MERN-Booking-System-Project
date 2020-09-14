@@ -22,13 +22,23 @@ const AdminControl = ({ id, setRedirect, setDeletedMovie }) => {
     }
 
     return (
-    <>
-    	<Link to={`/movies/${id}/edit`} className="btn btn-warning my-1 w-100">Edit</Link>
+        <>
+            
+             <div className="row">
+                <div className="col col-md-6">
+                    <Link id="edit" to={`/movies/${id}/edit`} className="btn btn-warning my-1 w-100">Edit</Link>
+                </div>
+            
+                <div className="col col-md-6">
+                    <button id="delete"
+                        className="btn btn-danger my-1 w-100"
+                        onClick={handleClick}
+                        >Delete</button>
+                </div>
+            </div>
+    	
 
-        <button 
-        className="btn btn-danger my-1 w-100"
-        onClick={handleClick}
-        >Delete</button>
+        
     </>
     );
 }
