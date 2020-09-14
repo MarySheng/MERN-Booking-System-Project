@@ -1,0 +1,19 @@
+.card {
+    font-family: 'Arvo', serif;
+    margin-top: 70px;
+    background-color: #ffaa71;
+    color: white;
+}
+
+html, body {
+    background: url('https://image.shutterstock.com/image-vector/online-cinema-art-movie-watching-260nw-586719869.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#register{
+    width: 50%;
+    background-color: #ff7171;
+    border-radius: 8px;
+    border: 3px solid coral;
+}

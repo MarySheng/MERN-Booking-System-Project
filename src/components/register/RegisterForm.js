@@ -109,7 +109,7 @@ const RegisterForm = (props) => {
             
             <div className="form-group row mb-0">
                 <div className="col-md-6 offset-md-4">
-                    <button type="submit" className="btn btn-primary">
+                    <button id="register" type="submit" className="btn btn-primary">
                         Register
                     </button>
                 </div>

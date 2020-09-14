@@ -5,7 +5,7 @@ import TableFooter from './TableFooter'
 
 const Booking = () => {
     return (
-        <div class="container">
+        <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                     <h1 class="text-center">

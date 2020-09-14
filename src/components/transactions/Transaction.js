@@ -35,7 +35,7 @@ const Transaction = () => {
     })
 
     return (
-        <div className="container">
+        <div className="container-fluid">
             <div className="row">
                 <div className="col-12 col-md-8 col-lg-6 mx-auto">
                     <ul className="list-group">
