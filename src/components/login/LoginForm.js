@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import InputGroup from './../inputs/InputGroup';
 import { Redirect } from 'react-router-dom';
 import AlertMessage from './../alertMessage/AlertMessage';
+import './login.css';
 
 const LoginForm = (props) => {
 
@@ -108,7 +109,7 @@ const LoginForm = (props) => {
         />
         <div className="form-group row mb-0">
             <div className="col-md-6 offset-md-4">
-                <button type="submit" className="btn btn-primary" disabled={isLoading}>
+                <button id="login" type="submit" className="btn btn-primary" disabled={isLoading}>
             {
                 isLoading ?
                 "Login..." :

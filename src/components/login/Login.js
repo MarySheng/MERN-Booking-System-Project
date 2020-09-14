@@ -1,6 +1,6 @@
 import React from 'react';
 import LoginForm from './LoginForm';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 const Login = (props) => {
     if(props.authUser.isAuth){
@@ -10,7 +10,7 @@ const Login = (props) => {
     return (
         <div className="container-fluid">
         <div className="row justify-content-center">
-            <div className="col-md-8">
+            <div className="col-md-6">
                 <div className="card">
                     <h2 className="card-header text-center">Login</h2>
                     <div className="card-body">
