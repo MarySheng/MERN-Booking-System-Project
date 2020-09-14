@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
-import {Link, NavLink} from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import './nav.css';
 
 // const Navbar = ({authUser}) => {
   const Navbar = (props) => {
 
   return (
-   <nav className="navbar navbar-expand-lg navbar-light bg-light">
-  <NavLink className="navbar-brand" exact to="/">Movie Time</NavLink>
+   <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+      <NavLink id="icon" className="navbar-brand" exact to="/">
+        <img src="https://www.iconfinder.com/data/icons/cat-7/512/cat_sticker_emoji_emoticon_popcorn_movie-512.png" />
+      </NavLink>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>

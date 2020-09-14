@@ -1,0 +1,25 @@
+#icon img {
+    height: 10%x;
+    width: 50px;
+    margin-left: 50px;
+}
+
+.nav-item  {
+    font-family: 'Arvo', serif;
+    font-size: 15px;
+    
+}
+
+
+ .navbar {
+     background: url('https://image.shutterstock.com/image-photo/movie-projector-on-dark-background-260nw-753798850.jpg');
+     background-repeat: no-repeat;
+     background-size: cover;
+ }
+
+ .container-fluid {
+     margin: 0;
+     padding: 0;
+ }
+
+ 
