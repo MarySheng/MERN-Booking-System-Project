@@ -10,6 +10,7 @@ import Movie from './components/Movie';
 import ViewDetail from './components/singleView/ViewDetail';
 import EditMovie from './components/editMovies/EditMovie';
 import Logout from './components/Logout';
+import Landing from './components/landing/Landing';
 import {
   BrowserRouter as Router,
   Switch,
@@ -25,6 +26,31 @@ function App() {
     fullname: "",
     email: ""
   });
+
+  const [myBooking, setMyBooking] = useState({
+    bookings: []
+  });
+
+
+  const addToBooking = (id, quantity) => {
+    setMyBooking({
+      bookings: [
+        ...myBooking.bookings,
+        {
+          movieId: id,
+          quantity: quantity
+        }
+      ]
+    })
+  }
+
+  const removeToBooking = id => {
+    let updatedBookings = myBooking.bookings.filter(booking => booking.movieId !== id)
+    setMyBooking({
+        bookings: updatedBookings 
+      })
+  }
+
 
   useEffect(() => {
     let appState = localStorage["appSate"];
@@ -47,34 +73,40 @@ function App() {
           }
         })
     }
-  })
+  },[])
+ 
 
   return (
     <Router>
       <Navbar authUser={authUser} />
       <Switch>
+        {/* Landing Page */}
+          <Route exact path='/'>
+          <Landing />
+        </Route>
+
         {/* Register */}
-        <Route path='/register'>
+        <Route exact path='/register'>
           <Register />
         </Route>
 
         {/* Login */}
-        <Route path='/login'>
+        <Route exact path='/login'>
           <Login authUser={authUser} setAuthUser={setAuthUser} />
         </Route>
 
         {/* AddMovie */}
-        <Route path='/create'>
+        <Route exact path='/create'>
           <AddMovie />
         </Route>
 
         {/* Movies Catalog */}
-        <Route exact path='/'>
+        <Route exact path='/movies'>
             <Movie />
         </Route>
 
         {/* Booking */}
-        <Route path='/booking'>
+        <Route exact path='/booking'>
           <Booking />
         </Route>
 
@@ -98,7 +130,7 @@ function App() {
           <EditMovie />
         </Route>
         
-        <Route path='/logout'>
+        <Route exact path='/logout'>
         <Logout setAuthUser={setAuthUser} />
         </Route>
 

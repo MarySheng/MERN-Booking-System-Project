@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 const TableBody = (props) => {
+
     return (
         <tr>
             <td scope="row">_booking.movieId.name_</td>

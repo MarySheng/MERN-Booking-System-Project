@@ -41,7 +41,7 @@ const ViewDetail = ({setDeletedMovie}) => {
     }
 
     if (redirect) {
-        return <Redirect to='/' />
+        return <Redirect to='/movies' />
     }
 
 
