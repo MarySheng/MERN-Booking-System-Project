@@ -1,0 +1,20 @@
+#mybooking {
+    font-family: 'Arvo', serif;
+    color: white;
+    margin-top: 100px;
+    margin-bottom: 30px;
+}
+.table th {
+    color: white;
+}
+
+.table td {
+    color: white;
+}
+
+#clear {
+    background-color: #d92027;
+    width: 50%;
+    border: 2px solid #ff9234;
+    border-radius: 25%;  
+}
