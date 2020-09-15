@@ -4,42 +4,29 @@ import { Link, useParams} from 'react-router-dom';
 import AdminControl from './AdminControl';
 import './movie.css';
 
-const DisplayMovie = ({ setMovie, movie, withDescription, setRedirect, setDeletedMovie, addToBooking }) => {
+const DisplayMovie = ({movie, withDescription, setRedirect, setDeletedMovie, addToBooking }) => {
     
-    const { id } = useParams();
 
-    const [booking, setBooking] = useState({
-        _id: "",
-        quantity: 0
 
-    })
+    const [quantity, setQuantity] = useState(0);
+
     
-const handleChange = e => {
-    setMovie({
-        ...movie,
-        [e.target.id] : e.target.value
-    })
-}
-
-    const onBooking = () => {
-        addToBooking(booking)
-        fetch(`https://booking-movie-backend.herokuapp.com/users/bookings`, {
-			method: "post",
-			headers: {
-				"Authorization": `Bearer ${localStorage['appState']}`
-			}
-        })
-         .then(res => res.json())
-            .then(data => {
-                setBooking(data)
-            })
+    const handleChange = e => {
+        setQuantity(e.target.value)
     }
     
-
     
+
+     const onBooking = () => {
+     addToBooking(movie._id, quantity)
+     setRedirect(true)
+    }
+   
+  
+      
     return (
          <>
-            <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t31.0-8/12593577_1263674986980046_2730109566877685141_o.jpg?_nc_cat=108&_nc_sid=09cbfe&_nc_eui2=AeHn2egSf16BRo9SkR9mcJWFqR7iHnMGBiKpHuIecwYGIq2zpf_WnLB-0XpkuQ9uocmllMaiiMV4Xf-cPIKEWjGy&_nc_ohc=8o7AQXWJlAUAX88gdod&_nc_ht=scontent.fmnl17-1.fna&oh=e366fb306413352d2b81d049a20b1316&oe=5F812ECE" alt=""
+            <img src={`https://booking-movie-backend.herokuapp.com/${movie.image}`}
                 className="w-100" />
             
             <h5 id="text-white">{movie.name}</h5>
@@ -62,12 +49,17 @@ const handleChange = e => {
             
             <div className="row">
                 <div className="col col-md-6">
-                    <button id="bookNow" onClick={onBooking} className="btn btn-success">Book Now</button>
+                    <Link id="bookNow" to='booking'  onClick={onBooking} className="btn btn-success">Book Now</Link>
                     
                 </div>
                 <div className="col col-md-6">
                    
-                    <Link id="detail" to={`/movies/${movie._id}`} className="btn btn-primary">See Details</Link>
+                    <Link id="detail" to={`/movies/${movie._id}`} className="btn btn-primary">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-eye" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.134 13.134 0 0 0 1.66 2.043C4.12 11.332 5.88 12.5 8 12.5c2.12 0 3.879-1.168 5.168-2.457A13.134 13.134 0 0 0 14.828 8a13.133 13.133 0 0 0-1.66-2.043C11.879 4.668 10.119 3.5 8 3.5c-2.12 0-3.879 1.168-5.168 2.457A13.133 13.133 0 0 0 1.172 8z"/>
+                        <path fill-rule="evenodd" d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                        </svg>
+                        Details</Link>
                 </div>
             </div>
             

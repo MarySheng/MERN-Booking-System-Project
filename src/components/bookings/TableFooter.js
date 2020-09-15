@@ -1,10 +1,10 @@
 import React from 'react';
 
-const TableFooter = (props) => {
+const TableFooter = () => {
     return (
         <tr>
             <td colspan="3" class="text-right">Total</td>
-            <td><strong>&#8369; _total_</strong></td>
+            <td><strong>&#8369;</strong></td>
             <td>
                 <button class="btn btn-sm w-100 btn-success">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-camera-reels" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -27,7 +27,6 @@ const TableRow = ({booking}) => {
          </form>
 
         </td>
-            <td><input type="date" name="date" /></td>
             <td>{booking.subtotal}</td>
 
     </tr>

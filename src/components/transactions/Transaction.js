@@ -1,10 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom'
+import Spinner from 'react-bootstrap/Spinner';
 
 
 const Transaction = () => {
 
     const [transactions, setTransactions] = useState([]);
+
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         fetch("https://booking-movie-backend.herokuapp.com/transactions", {
@@ -15,6 +18,7 @@ const Transaction = () => {
             .then(res => res.json())
             .then(data => {
                 setTransactions(data)
+                setLoading(false)
             })
     }, []);
 
@@ -39,7 +43,19 @@ const Transaction = () => {
             <div className="row">
                 <div className="col-12 col-md-8 col-lg-6 mx-auto">
                     <ul className="list-group">
-                        {transactionList}
+                        {
+                            loading ?
+                                <>
+                                    <Spinner animation="border" size="sm" />
+                                    <Spinner animation="border" />
+                                    <Spinner animation="grow" size="sm" />
+                                    <Spinner animation="grow" />
+                                </>
+                                :
+                                <>                         
+                                 {transactionList}
+                                </>
+                        }
     		        </ul>
                 </div>
             </div>

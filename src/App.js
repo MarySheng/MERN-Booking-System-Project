@@ -47,12 +47,12 @@ function App() {
     })
     }
 
-    //   const removeToBooking = id => {
-//     let updatedBookings = myBooking.bookings.filter(booking => booking.movieId !== id)
-//     setMyBooking({
-//         bookings: updatedBookings 
-//       })
-//   }
+    const removeToBooking = id => {
+    let updatedBookings = myBooking.bookings.filter(booking => booking.movieId !== id)
+    setMyBooking({
+        bookings: updatedBookings 
+      })
+  }
 
 
 
@@ -108,12 +108,12 @@ function App() {
 
         {/* Movies Catalog */}
         <Route exact path='/movies'>
-            <Movie />
+            <Movie  addToBooking={addToBooking} />
         </Route>
 
         {/* Booking */}
         <Route exact path='/booking'>
-          <Booking addToBooking={addToBooking} />
+              <Booking myBooking={myBooking} removeToBooking={removeToBooking}/>
         </Route>
 
         {/* Transaction */}

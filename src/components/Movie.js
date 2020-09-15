@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import DisplayMovie from './DisplayMovie';
-import {Redirect} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import Spinner from 'react-bootstrap/Spinner'
 
-const Movie = () => {
+const Movie = ({addToBooking, setMovie}) => {
 
     const [movies, setMovies] = useState([]);
 
@@ -10,10 +11,15 @@ const Movie = () => {
 
     const [deletedMovie, setDeletedMovie] = useState({});
 
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         fetch("https://booking-movie-backend.herokuapp.com/movies")
             .then(response => { return response.json() })
-            .then(movies => { setMovies(movies) })
+            .then(movies => {
+                setMovies(movies)
+                 setLoading(false)
+            })
     }, []);
 
     useEffect(() => {
@@ -29,10 +35,12 @@ const Movie = () => {
 
         
     let movieList = movies.map(movie => {
-        return(
-        <div id="movieList" className="col-12 col-md-3 mt-5" key={movie._id}>
-            <DisplayMovie movie={movie} setDeletedMovie={setDeletedMovie} setRedirect={setRedirect} />
-        </div>
+        return (
+            <div id="movieList" className="col-12 col-md-3 mt-5" key={movie._id}>
+           
+                <DisplayMovie setMovie={setMovie} addToBooking={addToBooking} movie={movie} setDeletedMovie={setDeletedMovie} setRedirect={setRedirect} />
+            
+            </div>
         )
     })
    
@@ -47,7 +55,20 @@ const Movie = () => {
             </div>
             </div>
             <div className="row mt-5" >
-               {movieList}                 
+                {
+                    loading ?
+            
+                        <>
+                            <Spinner animation="border" size="sm" />
+                            <Spinner animation="border" />
+                            <Spinner animation="grow" size="sm" />
+                            <Spinner animation="grow" />
+                        </>
+                        :
+                        <>
+                        {movieList}
+                        </>
+                }
             </div>
         </div>
     );

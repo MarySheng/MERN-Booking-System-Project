@@ -46,10 +46,10 @@ const ViewDetail = ({setDeletedMovie}) => {
 
 
     return (
-        <div className="container">
+        <div id="singleContainer" className="container">
             <div className="row">                        
                 <div id="movieImg" className="col-12 col-md-6">
-                    <img src="https://scontent.fmnl17-1.fna.fbcdn.net/v/t31.0-8/12593577_1263674986980046_2730109566877685141_o.jpg?_nc_cat=108&_nc_sid=09cbfe&_nc_eui2=AeHn2egSf16BRo9SkR9mcJWFqR7iHnMGBiKpHuIecwYGIq2zpf_WnLB-0XpkuQ9uocmllMaiiMV4Xf-cPIKEWjGy&_nc_ohc=8o7AQXWJlAUAX88gdod&_nc_ht=scontent.fmnl17-1.fna&oh=e366fb306413352d2b81d049a20b1316&oe=5F812ECE"
+                    <img src={`https://booking-movie-backend.herokuapp.com/${movie.image}`}
                         className="w-100" />
                 </div>
 
@@ -73,9 +73,24 @@ const ViewDetail = ({setDeletedMovie}) => {
                                 <div id="text-white" className="col">&#8369;{movie.price}</div>
                             </div>
                             <div className="row mt-3">
+                                        {/* Book Now */}
                                 <button id="bookNow" className="btn btn-success btn-sm w-25 mr-3">Book Now</button>
-                                <Link id="edit" to={`/movies/${id}/edit`}  className="btn btn-warning btn-sm w-25 mr-3">Edit</Link>
-                                <button id="delete" onClick={handleClick} className="btn btn-danger btn-sm w-25">Delete</button>
+
+                                        {/* Edit */}
+                                <Link id="edit" to={`/movies/${id}/edit`} className="btn btn-warning btn-sm w-25 mr-3">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pencil-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                                    </svg>
+                                    Edit</Link>
+                                
+                                     {/* Delete */}
+                                <button id="delete" onClick={handleClick} className="btn btn-danger btn-sm w-25">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4L4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                                    </svg>
+                                    Delete</button>
                             </div>
 
                             <div className="row mt-3">

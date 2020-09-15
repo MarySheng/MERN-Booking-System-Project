@@ -1,31 +1,18 @@
-import React, {useState, useEffect} from 'react';
+import React  from 'react';
 import TableHead from './TableHead';
 import TableBody from './TableBody';
 import TableFooter from './TableFooter'
 import './booking.css';
 import { Link } from 'react-router-dom';
 
-const Booking = () => {
+const Booking = ({myBooking:bookings, removeToBooking}) => {
 
-    const [bookings, setBookings] = useState([])
-    
-
-     useEffect(() => {
-        fetch("https://booking-movie-backend.herokuapp.com/bookings", {
-            headers: {
-                "Authorization": `Bearer ${localStorage['appState']}`
-            }
-        })
-            .then(res => res.json())
-            .then(data => {
-                setBookings(data)
-            })
-     }, []);
-    
-    
-   
-    const bookingList = bookings.map(booking => {
-        return <TableBody booking={booking} />
+    console.log(bookings)
+    const bookingList = bookings.bookings.map(booking => {
+        return (
+            <TableBody key={booking._id} booking={booking} removeToBooking={removeToBooking} />
+            
+        ) 
     })
 
 
@@ -61,12 +48,13 @@ const Booking = () => {
                     </thead>
                         {/* TABLE BODY */}
                     <tbody>
-                       {bookingList} 
+                        {bookingList} 
+                           
                     </tbody>
                         
                         {/* TABLE FOOTER */}
                     <tfoot>
-                        <TableFooter />
+                        <TableFooter/>
                     </tfoot>
                 </table>
 

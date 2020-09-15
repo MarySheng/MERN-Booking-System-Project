@@ -28,7 +28,7 @@
 }
 
 #container {
-  margin-bottom: 60px
+  margin-bottom: 150px
 }
 
 #transaction-container {
@@ -67,6 +67,7 @@
 #movieImg img {
     margin-top: 50px;
     height: 75%;
+    border-radius: 25%;
 }
 
 .movieName{
@@ -89,4 +90,21 @@
 
 .content-wrap {
   flex: 1;
+}
+
+
+#movieList img {
+  border-radius: 25%;
+  width: 50%;
+  height: 50%;
+  margin-bottom: 20px;
+}
+
+
+#button-row {
+  margin-bottom: 70px;
+}
+
+#singleContainer {
+  margin-bottom: 60px;
 }

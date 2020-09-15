@@ -20,8 +20,6 @@ const TransactionTable = ({ bookings}) => {
                         <th scope="col">Price</th>
                         {/* quantity */}
                         <th scope="col">Quantiy</th>
-                        {/* Date */}
-                        <th scope="col">Date</th>
                         {/* subtotal */}
                         <th scope="col">Subtotal</th>
                            

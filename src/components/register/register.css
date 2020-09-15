@@ -20,7 +20,7 @@ html, body {
 }
 
 #register-container {
-  margin-bottom: 60px;
+  margin-bottom: 150px;
 }
 
 #main-footer {
@@ -38,6 +38,9 @@ html, body {
   font-weight: 500;
 }
 
+.userRegister {
+  color: #e97171;
+}
 
 
 
