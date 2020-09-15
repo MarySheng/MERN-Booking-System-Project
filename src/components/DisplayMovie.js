@@ -43,7 +43,7 @@ const handleChange = e => {
                 className="w-100" />
             
             <h5 id="text-white">{movie.name}</h5>
-            <p className="text-white">&#8369;{movie.price}</p>
+            <p>&#8369;{movie.price}</p>
             {
                 withDescription ?
                 <p id="text-white">{movie.description}</p>

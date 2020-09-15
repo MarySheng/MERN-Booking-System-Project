@@ -40,7 +40,7 @@
 .movie-header {
   font-family: 'Arvo', serif;
   margin-top: 90px;
-  color: white;
+  color: black;
   font-size: 40px;
   mix-blend-mode: difference;
   -webkit-animation: glow 1s ease-in-out infinite alternate;
@@ -59,7 +59,7 @@
 }
 
 #text-white {
-    color: white;
+    color: black;
     font-family: 'Arvo', serif;
 
 }

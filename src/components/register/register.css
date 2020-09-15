@@ -8,7 +8,6 @@
 html, body {
     overflow-y: scroll;
     overflow-x: hidden;
-    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQaZrQe7KCzO9MGSvBWtTPQ2YZf8ENtC1VuzJBZ1oUCpJwplKnLp013K_ZMuZMY7bxpi7_d0UU2Z4nQsMdn78JQzgkAQ-LL6tFkqg&usqp=CAU&ec=45699845');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -25,7 +24,7 @@ html, body {
 }
 
 #main-footer {
-  background: url('https://image.shutterstock.com/image-photo/movie-projector-on-dark-background-260nw-753798850.jpg');
+  background: url('./../images/navbar.jpg');
   padding-top: 3em;
   position:relative;
   bottom: 0;

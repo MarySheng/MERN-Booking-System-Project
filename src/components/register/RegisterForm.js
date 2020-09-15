@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import InputGroup from './../inputs/InputGroup';
 import AlertMessage from './../alertMessage/AlertMessage';
+import { Link } from 'react-router-dom';
 
 const RegisterForm = (props) => {
 
@@ -69,7 +70,7 @@ const RegisterForm = (props) => {
                 type="text"
                 name="fullname"
                 placeholder="Enter Name Here"
-                displayName="Fullname:"
+                // displayName="Fullname:"
                 required
                 autocomplete="name"
                 autofocus  
@@ -79,7 +80,7 @@ const RegisterForm = (props) => {
             <InputGroup
                 type="email"
                 name="email"
-                displayName="Email:"
+                // displayName="Email:"
                 placeholder="Email Here"
                 required
                 autocomplete="email"
@@ -90,7 +91,7 @@ const RegisterForm = (props) => {
             <InputGroup
                 type="password"
                 name="password"
-                displayName="Password:"
+                // displayName="Password:"
                 placeholder="Password Here"
                 required
                 autofocus
@@ -100,8 +101,8 @@ const RegisterForm = (props) => {
             <InputGroup
                 type="password"
                 name="confirmPassword"
-                displayName="Confirm Password:" 
-                placeholder="Password Here"
+                // displayName="Confirm Password:" 
+                placeholder="Confirm Password Here"
                 required
                 autofocus
                 handleChange={handleChange}
@@ -109,9 +110,9 @@ const RegisterForm = (props) => {
             
             <div className="form-group row mb-0">
                 <div className="col-md-6 offset-md-4">
-                    <button id="register" type="submit" className="btn btn-primary">
+                    <Link to='login' id="register" type="submit" className="btn btn-primary">
                         Register
-                    </button>
+                    </Link>
                 </div>
             </div>
         </form>                                           

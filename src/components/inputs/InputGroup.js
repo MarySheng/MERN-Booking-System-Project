@@ -3,8 +3,7 @@ import React from 'react';
 const InputGroup = (props) => {
     return (
         <div className="form-group row">
-            <label htmlFor={props.name} className="col-md-4 col-form-label text-md-right">{props.displayName}</label>
-            <div className="col-md-6">
+            <div className="col-md-6 mx-auto">
             <input 
                 type={props.type}
                 name={props.name}

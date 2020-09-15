@@ -12,7 +12,7 @@
 
 
  .navbar {
-     background: url('https://image.shutterstock.com/image-photo/movie-projector-on-dark-background-260nw-753798850.jpg');
+     background: url('./../images/navbar.jpg');
      background-repeat: no-repeat;
      background-size: cover;
  }

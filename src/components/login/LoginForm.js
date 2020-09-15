@@ -68,13 +68,13 @@ const LoginForm = (props) => {
 						isAuth: true,
 						fullname: data.fullname,
 						email:data.email,
-						isAdmin:data.isAdmin
+						isAdmin: data.isAdmin
 					})
 					setIsSuccess(true)
 				}else {
-
 					setIsLoading(false)
 				}
+				
 				console.log(data)
 			});
 
@@ -90,7 +90,6 @@ const LoginForm = (props) => {
         <InputGroup
             type="email"
             name="email"
-            displayName="Email:"
             placeholder="Email Here"
             required
             autocomplete="email"
@@ -101,7 +100,6 @@ const LoginForm = (props) => {
         <InputGroup
             type="password"
             name="password"
-            displayName="Password:"
             placeholder="Password Here"
             required
             autofocus
