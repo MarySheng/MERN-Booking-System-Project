@@ -1,20 +1,18 @@
 import React, { useState } from 'react';
 import MovieInput from './../components/inputs/MovieInput';
-import { Link } from 'react-router-dom';
+import { Link, useParams} from 'react-router-dom';
 import AdminControl from './AdminControl';
 import './movie.css';
 
-const DisplayMovie = ({setMovie, movie, withDescription, setRedirect, setDeletedMovie, props}) => {
+const DisplayMovie = ({ setMovie, movie, withDescription, setRedirect, setDeletedMovie, addToBooking }) => {
+    
+    const { id } = useParams();
 
-    // const [movie, setMovie] => useState({
-    //     name: "",
-    //     quantity: 0
-    // });
+    const [booking, setBooking] = useState({
+        _id: "",
+        quantity: 0
 
-const handleSubmit = e => {
-    e.preventDefault();
-        props.addToBooking(movie)
-}
+    })
     
 const handleChange = e => {
     setMovie({
@@ -22,6 +20,22 @@ const handleChange = e => {
         [e.target.id] : e.target.value
     })
 }
+
+    const onBooking = () => {
+        addToBooking(booking)
+        fetch(`https://booking-movie-backend.herokuapp.com/users/bookings`, {
+			method: "post",
+			headers: {
+				"Authorization": `Bearer ${localStorage['appState']}`
+			}
+        })
+         .then(res => res.json())
+            .then(data => {
+                setBooking(data)
+            })
+    }
+    
+
     
     return (
          <>
@@ -48,7 +62,7 @@ const handleChange = e => {
             
             <div className="row">
                 <div className="col col-md-6">
-                    <button id="bookNow" onClick={handleSubmit} className="btn btn-success">Book Now</button>
+                    <button id="bookNow" onClick={onBooking} className="btn btn-success">Book Now</button>
                     
                 </div>
                 <div className="col col-md-6">
@@ -58,11 +72,6 @@ const handleChange = e => {
             </div>
             
             <AdminControl setDeletedMovie={setDeletedMovie} setRedirect={setRedirect} id={movie._id} />
-                
-            
-            
-            
-           
             
         </>
     );

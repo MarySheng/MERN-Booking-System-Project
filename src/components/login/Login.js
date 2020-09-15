@@ -2,13 +2,15 @@ import React from 'react';
 import LoginForm from './LoginForm';
 import { Redirect } from 'react-router-dom';
 
+
 const Login = (props) => {
     if(props.authUser.isAuth){
-		return <Redirect to="/" />
+		return <Redirect to="/movies" />
 	}
 
     return (
-        <div className="container-fluid">
+        <>
+        <div id="login-container" className="container-fluid">
         <div className="row justify-content-center">
             <div className="col-md-6">
                 <div className="card">
@@ -19,7 +21,8 @@ const Login = (props) => {
                 </div>
             </div>
         </div>
-    </div>
+     </div>
+    </>        
     );
 }
 

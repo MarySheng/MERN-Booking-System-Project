@@ -2,9 +2,11 @@ import React from 'react';
 import RegisterForm from './RegisterForm';
 import './register.css';
 
+
 const Register = (props) => {
     return (
-        <div className="container-fluid">
+        <>
+        <div id="register-container" className="container-fluid">
         <div className="row justify-content-center">
             <div className="col-md-6">
                 <div className="card">
@@ -14,9 +16,14 @@ const Register = (props) => {
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    
+            </div>
+            </div>
+        
+           
+
+    </>
+        
+ 
     );
 }
 

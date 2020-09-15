@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './nav.css';
 
-// const Navbar = ({authUser}) => {
-  const Navbar = (props) => {
+const Navbar = ({authUser}) => {
+  // const Navbar = (props) => {
 
   return (
    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -18,11 +18,13 @@ import './nav.css';
           {/*Admin Dropdown*/}
           {/* {
             authUser.isAdmin ? */}
-        <li className="nav-item">
+              <li className="nav-item">
          
-          <NavLink exact to='/create' className="nav-link">Add Movie</NavLink>    
+                <NavLink exact to='/create' className="nav-link">Add Movie</NavLink>
 
-        </li>
+              </li>
+              {/* : ""
+          } */}
 
             
           
@@ -41,22 +43,26 @@ import './nav.css';
          <li className="nav-item">
           <NavLink className="nav-link" exact to="/booking">My Booking</NavLink>
         </li>
+          
+        <li className="nav-item">
+          <NavLink className="nav-link" exact to="/contacts">Contacts</NavLink>
+        </li>
 
-          {/* {
-            authUser.isAuth ? */}
+          {
+            !authUser.isAuth ?
               <>
                 <li className="nav-item">
-                  <NavLink className="nav-link" to="/login">Login</NavLink>
+                  <NavLink className="nav-link" to="/login"><i className="fas fa-users-cog fa-2x"></i>Login</NavLink>
                 </li>
                 <li className="nav-item">
                   <NavLink className="nav-link" exact to="/register">Register</NavLink>
                 </li>
               </>
-              
+              :
               <li className="nav-item">
                 <NavLink className="nav-link" to="/logout" >Logout</NavLink>
               </li>
-          
+          }
           
       </ul>
   </div>

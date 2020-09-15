@@ -1,0 +1,177 @@
+
+
+/* Header*/
+
+
+.content h1{
+	font-family: 'Arvo', serif;
+	background: hsla(0, 100%, 30%, 0.7);
+	margin-top: 30px;
+	width: 100%;
+	padding: 30px;
+	text-align: center;
+	color: white;
+	border-radius: 10px;
+}
+
+/*Contact*/
+
+#me h3 {
+	font-family: 'Arvo', serif;
+	color: white;
+	margin-top: 20px;
+}
+
+#me p {
+	font-family: 'Arvo', serif;
+	margin-top: 30px; 
+	color: white; 
+}
+
+.linkin i {
+ margin-top: 30px;
+}
+
+.linkin span {
+	font-family: 'Arvo', serif;
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.github i {
+ margin-top: 30px;
+ color: white;
+}
+
+.github span {
+	font-family: 'Arvo', serif;
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.gitlab i {
+ margin-top: 30px;
+ color: darkorange;
+}
+
+.gitlab span {
+	font-family: 'Arvo', serif;
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.skype i {
+ margin-top: 30px;
+ color: #0779e4;
+}
+
+.skype span {
+ font-family: 'Arvo', serif;	
+  margin-left: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.gmail i {
+ margin-top: 30px;
+ color: #e71414;
+}
+
+.gmail span {
+  font-family: 'Arvo', serif;	
+  margin-left: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.messenger i {
+ margin-top: 30px;
+ color: #0779e4;
+}
+
+.messenger span {
+  font-family: 'Arvo', serif;
+  margin-left: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.instagram i {
+ margin-top: 30px;
+ color: #e84a5f;
+}
+
+.instagram span {
+  font-family: 'Arvo', serif;	
+  margin-left: 10px;
+  font-size: 20px;
+  color: white;
+}
+
+.contact-form {
+	margin-top: 40px;
+}
+.contact-form input {
+	margin-top:10px;
+	padding: 15px;
+	display: block;
+	width: 100%;
+	background-color: lightgrey;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+
+}
+
+.contact-form textarea {
+	margin-top:10px;
+	display: block;
+	width: 100%;
+	background-color: lightgrey;
+	border: none;
+	border-radius: 5px;
+	text-align: center;
+}
+
+.contact-form button {	
+  font-family: 'Noto Serif', serif;
+  background-color: #2fc4b2; 
+  margin-top: 8vh;
+  border-radius: 8px;
+  color: white;
+  width: 40%;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bolder;
+  font-size: 15px;
+  margin-left: 50%;
+  transform:translate(-50%, -50%);
+  mix-blend-mode: difference;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+} 
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #ff5200, 0 0 40px #ff5200, 0 0 50px #ff5200, 0 0 60px #ff5200, 0 0 70px #ff5200;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #9a1f40, 0 0 40px #9a1f40, 0 0 50px #9a1f40, 0 0 60px #9a1f40, 0 0 70px #9a1f40, 0 0 80px #9a1f40;
+  }
+}
+
+
+/*Map*/
+.map {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.map iframe {
+	width: 100%;
+}
+

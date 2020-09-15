@@ -27,6 +27,15 @@
     border-radius: 25%;    
 }
 
+#container {
+  margin-bottom: 60px
+}
+
+#transaction-container {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
 
 .movie-header {
   font-family: 'Arvo', serif;
@@ -72,3 +81,12 @@
     margin-top: 30px;
 }
 
+.page-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.content-wrap {
+  flex: 1;
+}

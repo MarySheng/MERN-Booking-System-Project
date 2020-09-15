@@ -32,7 +32,7 @@ const LoginForm = (props) => {
 
 	// after user login, it will redirect to home
 	if(isSuccess){
-		return <Redirect to="/" />
+		return <Redirect to="/movies" />
 	}
 
 	

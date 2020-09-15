@@ -11,6 +11,9 @@ import ViewDetail from './components/singleView/ViewDetail';
 import EditMovie from './components/editMovies/EditMovie';
 import Logout from './components/Logout';
 import Landing from './components/landing/Landing';
+import Footer from './components/footer/Footer';
+import './components/movie.css';
+import Contact from './components/contact/Contact';
 import {
   BrowserRouter as Router,
   Switch,
@@ -28,11 +31,11 @@ function App() {
   });
 
   const [myBooking, setMyBooking] = useState({
-    bookings: []
-  });
+        bookings: []
+  })
+  
 
-
-  const addToBooking = (id, quantity) => {
+   const addToBooking = (id, quantity) => {
     setMyBooking({
       bookings: [
         ...myBooking.bookings,
@@ -42,14 +45,15 @@ function App() {
         }
       ]
     })
-  }
+    }
 
-  const removeToBooking = id => {
-    let updatedBookings = myBooking.bookings.filter(booking => booking.movieId !== id)
-    setMyBooking({
-        bookings: updatedBookings 
-      })
-  }
+    //   const removeToBooking = id => {
+//     let updatedBookings = myBooking.bookings.filter(booking => booking.movieId !== id)
+//     setMyBooking({
+//         bookings: updatedBookings 
+//       })
+//   }
+
 
 
   useEffect(() => {
@@ -77,6 +81,8 @@ function App() {
  
 
   return (
+    < div className="page-container">
+      <div className="content-wrap">
     <Router>
       <Navbar authUser={authUser} />
       <Switch>
@@ -107,7 +113,7 @@ function App() {
 
         {/* Booking */}
         <Route exact path='/booking'>
-          <Booking />
+          <Booking addToBooking={addToBooking} />
         </Route>
 
         {/* Transaction */}
@@ -130,12 +136,24 @@ function App() {
           <EditMovie />
         </Route>
         
+            {/* Logout */}
         <Route exact path='/logout'>
         <Logout setAuthUser={setAuthUser} />
         </Route>
+            
+      {/* Contact */}
+        <Route exact path='/contacts'>
+          <Contact />
+        </Route>      
 
+         
       </Switch>
     </Router>
+    <div>
+      <Footer />
+      </div>
+      </div>
+      </div>
   );
 }
 

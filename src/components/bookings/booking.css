@@ -18,3 +18,15 @@
     border: 2px solid #ff9234;
     border-radius: 25%;  
 }
+
+.badge{
+    background-color: #e97171;
+}
+
+#booking-container{
+    margin-bottom: 50px;
+}
+
+#trans-container {
+    margin-bottom: 120px;
+}

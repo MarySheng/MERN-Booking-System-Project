@@ -1,10 +1,10 @@
 import React, {useState, useEffect} from 'react';
 
-const TableBody = (props) => {
+const TableBody = ({booking}) => {
 
     return (
         <tr>
-            <td scope="row">_booking.movieId.name_</td>
+            <td scope="row">{booking.movieId.name}</td>
             <td>                
             <form>
             <div class="input-group mb-3">
@@ -13,7 +13,7 @@ const TableBody = (props) => {
                     min="1" 
                     name="quantity" 
                     class="form-control form-control-sm"
-                    value="{booking.quantity}"
+                    value={booking.quantity}
                />                                         
                 <div class="input-group-append">
                     <button class="btn btn-outline-secondary btn-sm" type="submit" id="button-addon2"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-pen" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -29,8 +29,8 @@ const TableBody = (props) => {
         <td>
             <input type="date" name="date" />
         </td>
-        <td>&#8369; _booking.price_</td>
-        <td>&#8369;_booking.subtotal_</td>
+            <td>&#8369; {booking.price}</td>
+            <td>&#8369;{booking.subtotal}</td>
         <td>
             <button id="delete" class="btn btn-sm btn-outline-danger text-white">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -40,7 +40,7 @@ const Movie = () => {
      
 
     return (
-        <div className="container">
+        <div id="container" className="container">
             <div className="row">
                 <div className="col-12 col-md-8 mx-auto" >
                  <h1 className="text-center movie-header">Watch All You Can!</h1>
