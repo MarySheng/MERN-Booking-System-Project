@@ -14,7 +14,7 @@ const MovieInput = (props) => {
         	aria-describedby="helpId"
             onChange={props.handleChange} 
             value={props.value}
-          />
+        />
     </div>
     );
 }

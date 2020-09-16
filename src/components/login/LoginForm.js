@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import InputGroup from './../inputs/InputGroup';
 import { Redirect } from 'react-router-dom';
 import AlertMessage from './../alertMessage/AlertMessage';
+import { Link } from 'react-router-dom';
 import './login.css';
 
 const LoginForm = (props) => {
@@ -105,7 +106,11 @@ const LoginForm = (props) => {
             autofocus
             handleChange={handleChange}
         />
-        <div className="form-group row mb-0">
+			<div className="form-group row mb-0">
+				<div className="no-account">
+                    <small>No Account Yet?</small>
+                    <Link to='/register'><small>Sign Up Here</small></Link>
+                </div>
             <div className="col-md-6 offset-md-4">
                 <button id="login" type="submit" className="btn btn-primary" disabled={isLoading}>
             {

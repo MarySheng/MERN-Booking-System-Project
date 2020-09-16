@@ -10,9 +10,8 @@ const Register = (props) => {
         <div className="row justify-content-center">
             <div className="col-md-6">
                 <div className="card">
-                        <i class="fas fa-user-plus fa-3x text-center userRegister"></i>
                         <h2 className="card-header text-center">
-                            
+                            <i class="fas fa-user-plus  text-center userRegister"></i>
                             Register</h2>
                 <div className="card-body">
                     <RegisterForm />

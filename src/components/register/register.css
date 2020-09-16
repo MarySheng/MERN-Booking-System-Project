@@ -1,8 +1,6 @@
 .card {
     font-family: 'Arvo', serif;
     margin-top: 70px;
-    background-color: #ffaa71;
-    color: white;
 }
 
 html, body {
@@ -20,7 +18,11 @@ html, body {
 }
 
 #register-container {
-  margin-bottom: 150px;
+  background: url('./../images/Robert.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
 }
 
 #main-footer {
@@ -42,5 +44,7 @@ html, body {
   color: #e97171;
 }
 
-
+.already-registered {
+  margin-left: 350px;
+}
 

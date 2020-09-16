@@ -118,7 +118,7 @@ const MovieForm = (props) => {
 
     	
 
-    <label id="text-white" htmlFor="description">Description:</label>
+    <label id="addDesc" htmlFor="description">Description:</label>
     <br />
     <textarea 
     	className="form-control form-control-sm"  

@@ -31,7 +31,7 @@ const TransactionTable = ({ bookings}) => {
 
                 </tbody>
 
-                <TableFooter />
+                <TableFooter bookings={bookings} />
                    
             </table>
         </div> 

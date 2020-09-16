@@ -4,13 +4,12 @@ import Spinner from 'react-bootstrap/Spinner';
 
 
 const Transaction = () => {
-
     const [transactions, setTransactions] = useState([]);
 
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://booking-movie-backend.herokuapp.com/transactions", {
+        fetch(`https://booking-movie-backend.herokuapp.com/transactions/`, {
             headers: {
                 "Authorization": `Bearer ${localStorage['appState']}`
             }

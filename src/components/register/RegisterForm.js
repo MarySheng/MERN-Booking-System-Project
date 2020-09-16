@@ -18,12 +18,14 @@ const RegisterForm = (props) => {
         message: "Please Check Your Credentials"
     });
 
+
     const handleChange = e => {
         setUser({
             ...user,
             [e.target.name]: e.target.value
         })
     };
+
 
     const handleSubmit = e => {
         e.preventDefault();
@@ -56,7 +58,7 @@ const RegisterForm = (props) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form >
             {
                 error.hasError ?
                 <AlertMessage 
@@ -105,10 +107,15 @@ const RegisterForm = (props) => {
             />
             
             <div className="form-group row mb-0">
+                
+                <div className="already-registered">
+                    <small>Already Registered?</small>
+                    <Link to='/login'><small>Go to login</small></Link>
+                </div>
                 <div className="col-md-6 offset-md-4">
-                    <Link to='login' id="register" type="submit" className="btn btn-primary">
+                    <button onClick={handleSubmit}  id="register" type="submit" className="btn btn-primary">
                         Register
-                    </Link>
+                    </button>
                 </div>
             </div>
         </form>                                           

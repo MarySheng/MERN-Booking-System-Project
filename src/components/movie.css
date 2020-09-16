@@ -32,8 +32,14 @@
 }
 
 #transaction-container {
-  margin-bottom: 50px;
-  margin-top: 50px;
+  background: url('./images/movies.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+
+
+
 }
 
 
@@ -61,7 +67,7 @@
 #text-white {
     color: black;
     font-family: 'Arvo', serif;
-
+    margin-top: 30px;
 }
 
 #movieImg img {
@@ -74,30 +80,11 @@
     margin-top: 100px;
 }
 
-#back {
-     background-color: #63b7af;
-    width: 100%;
-    border: 2px solid #abf0e9;
-    border-radius: 25%;  
-    margin-top: 30px;
-}
-
-.page-container {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-.content-wrap {
-  flex: 1;
-}
-
 
 #movieList img {
   border-radius: 25%;
   width: 50%;
-  height: 50%;
-  margin-bottom: 20px;
+  height: 40%;
 }
 
 
@@ -107,4 +94,9 @@
 
 #singleContainer {
   margin-bottom: 60px;
+}
+
+
+.list-group {
+  margin-top: 50px;
 }

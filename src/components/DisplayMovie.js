@@ -37,15 +37,15 @@ const DisplayMovie = ({movie, withDescription, setRedirect, setDeletedMovie, add
                 : <> </>    
             }
             
-
+            
             <MovieInput
                 type="number"
                 name="quantity"
                 displayName="Ticket"
                 min="1"
                 handleChange={handleChange}
-                id="qty"
-            />
+                id="qty"            
+                />          
             
             <div className="row">
                 <div className="col col-md-6">

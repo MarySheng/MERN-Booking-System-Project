@@ -11,7 +11,6 @@ import ViewDetail from './components/singleView/ViewDetail';
 import EditMovie from './components/editMovies/EditMovie';
 import Logout from './components/Logout';
 import Landing from './components/landing/Landing';
-import Footer from './components/footer/Footer';
 import './components/movie.css';
 import Contact from './components/contact/Contact';
 import {
@@ -49,13 +48,20 @@ function App() {
     })
     }
 
-    const removeToBooking = id => {
+  const removeToBooking = id => {
+    console.log("id = ", id)
     let updatedBookings = myBooking.bookings.filter(booking => booking.movieId !== id)
+    console.log("updatedBookings = ", updatedBookings)
     setMyBooking({
         bookings: updatedBookings 
       })
   }
 
+const clearAllBookings = () => {
+      setMyBooking({
+        bookings: [] 
+      })
+    }
 
 
   useEffect(() => {
@@ -83,8 +89,6 @@ function App() {
  
 
   return (
-    < div className="page-container">
-      <div className="content-wrap">
     <Router>
       <Navbar authUser={authUser} />
       <Switch>
@@ -115,7 +119,7 @@ function App() {
 
         {/* Booking */}
         <Route exact path='/booking'>
-              <Booking myBooking={myBooking} removeToBooking={removeToBooking}/>
+              <Booking myBooking={myBooking} removeToBooking={removeToBooking} clearAllBookings={clearAllBookings}/>
         </Route>
 
         {/* Transaction */}
@@ -151,11 +155,6 @@ function App() {
          
       </Switch>
     </Router>
-    <div>
-      <Footer />
-      </div>
-      </div>
-      </div>
   );
 }
 

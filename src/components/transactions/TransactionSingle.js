@@ -24,7 +24,7 @@ const TransactionSingle = (props) => {
         })
             .then(res => res.json())
             .then(data => {
-                if (data) {
+                if (data._id) {
                     setLoading(false)
                 } 
                 setTransaction(data)
