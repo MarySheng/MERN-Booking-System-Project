@@ -1,11 +1,11 @@
 import React from 'react';
 
 const TableBody = ({ booking, removeToBooking }) => {
-    console.log(booking._id)
+    console.log(booking.name)
 
     return (
         <tr>
-            <td scope="row">{booking._id}</td>
+            <td scope="row">{booking.name}</td>
             <td>                
             <form>
             <div class="input-group mb-3">
@@ -28,7 +28,7 @@ const TableBody = ({ booking, removeToBooking }) => {
 
         </td>
             <td>&#8369; {booking.price}</td>
-            <td>&#8369;{booking.subtotal}</td>
+            <td>&#8369;{booking.price*booking.quantity}</td>
         <td>
             <button onClick={() => removeToBooking(booking._id)} id="delete" class="btn btn-sm btn-outline-danger text-white">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

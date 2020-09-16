@@ -35,11 +35,13 @@ function App() {
   })
   
 
-   const addToBooking = (id, quantity) => {
+   const addToBooking = (id, quantity, name, price) => {
     setMyBooking({
       bookings: [
         ...myBooking.bookings,
         {
+          name,
+          price,
           movieId: id,
           quantity: quantity
         }

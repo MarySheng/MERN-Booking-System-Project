@@ -26,7 +26,7 @@ html, body {
 #main-footer {
   background: url('./../images/navbar.jpg');
   padding-top: 3em;
-  position:relative;
+  /* position:relative; */
   bottom: 0;
   width: 100%;
 }

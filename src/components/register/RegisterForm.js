@@ -70,7 +70,6 @@ const RegisterForm = (props) => {
                 type="text"
                 name="fullname"
                 placeholder="Enter Name Here"
-                // displayName="Fullname:"
                 required
                 autocomplete="name"
                 autofocus  
@@ -80,7 +79,6 @@ const RegisterForm = (props) => {
             <InputGroup
                 type="email"
                 name="email"
-                // displayName="Email:"
                 placeholder="Email Here"
                 required
                 autocomplete="email"
@@ -91,7 +89,6 @@ const RegisterForm = (props) => {
             <InputGroup
                 type="password"
                 name="password"
-                // displayName="Password:"
                 placeholder="Password Here"
                 required
                 autofocus
@@ -100,8 +97,7 @@ const RegisterForm = (props) => {
 
             <InputGroup
                 type="password"
-                name="confirmPassword"
-                // displayName="Confirm Password:" 
+                name="confirmPassword" 
                 placeholder="Confirm Password Here"
                 required
                 autofocus
