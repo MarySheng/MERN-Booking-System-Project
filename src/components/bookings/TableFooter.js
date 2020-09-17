@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const TableFooter = ({ bookings}) => {
+const TableFooter = ({ bookings, clearAllBookings}) => {
     const total = bookings.bookings.reduce((result, booking) => result + booking.price * booking.quantity, 0)
     
     console.log("bookings=", bookings)
@@ -14,7 +14,16 @@ const TableFooter = ({ bookings}) => {
                   "Content-Type": "application/json"
             }
         })
-            .then(response => response.json())
+            .then(response => {
+                  console.log(response.status)
+                if (response.status === 400) {
+                    console.log("some error occur")
+                } else {
+                     
+                    clearAllBookings()
+                }
+               return response.json()
+            })
             .then(data => {
                 console.log(data)
             })
@@ -24,8 +33,8 @@ const TableFooter = ({ bookings}) => {
 
     return (
         <tr>
-            <td colspan="3" class="text-right">Total</td>
-            <td><strong>&#8369;{total}</strong></td>
+            <td colspan="3" className="text-right" id="total">Total</td>
+            <td id="total"><strong>&#8369;{total}</strong></td>
             <td>
                 <Link onClick={onCheckout} to ='/transactions' className="btn btn-sm w-100 btn-success">
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-camera-reels" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
