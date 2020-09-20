@@ -16,6 +16,8 @@ const TransactionTable = ({ bookings}) => {
                     <tr>
                         {/* Name */}
                         <th scope="col" className="text-dark">Name</th>
+                        {/* Date */}
+                        <th scope="col" className="text-dark">Date</th>
                         {/* price */}
                         <th scope="col" className="text-dark">Price</th>
                         {/* quantity */}
