@@ -16,15 +16,15 @@ const Navbar = ({authUser}) => {
   <div className="collapse navbar-collapse" id="navbarNav">
     <ul className="navbar-nav mr-auto">
           {/*Admin Dropdown*/}
-          {/* {
-            authUser.isAdmin ? */}
+          {
+            authUser.isAdmin ?
               <li className="nav-item">
          
                 <NavLink exact to='/create' className="nav-link">Add Movie</NavLink>
 
               </li>
-               {/* : ""
-          }  */}
+              : ""
+          }
 
             
           

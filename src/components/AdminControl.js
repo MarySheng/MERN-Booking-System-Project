@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 
-const AdminControl = ({ id, setRedirect, setDeletedMovie }) => {
+const AdminControl = ({ id, setRedirect, setDeletedMovie, authUser }) => {
     
     const handleClick = () => {
         fetch(`https://booking-movie-backend.herokuapp.com/movies/${id}`, {
@@ -23,7 +23,8 @@ const AdminControl = ({ id, setRedirect, setDeletedMovie }) => {
 
     return (
         <>
-            
+            { 
+              authUser.isAdmin  ?
              <div id="button-row" className="row">
                 <div className="col col-md-6">
                     <Link id="edit" to={`/movies/${id}/edit`} className="btn btn-warning my-1 w-100">
@@ -46,7 +47,8 @@ const AdminControl = ({ id, setRedirect, setDeletedMovie }) => {
                         Delete</button>
                 </div>
             </div>
-    	
+    	 : <></>
+            } 
 
         
     </>

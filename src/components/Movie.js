@@ -3,7 +3,7 @@ import DisplayMovie from './DisplayMovie';
 import { Redirect } from 'react-router-dom';
 import Spinner from 'react-bootstrap/Spinner'
 
-const Movie = ({addToBooking, setMovie}) => {
+const Movie = ({addToBooking, setMovie, authUser}) => {
 
     const [movies, setMovies] = useState([]);
 
@@ -36,9 +36,9 @@ const Movie = ({addToBooking, setMovie}) => {
         
     let movieList = movies.map(movie => {
         return (
-            <div id="movieList" className="col-12 col-md-3 mt-5" key={movie._id}>
+            <div id="movieList" className="col-12 col-md-4 mt-5" key={movie._id}>
            
-                <DisplayMovie setMovie={setMovie} addToBooking={addToBooking} movie={movie} setDeletedMovie={setDeletedMovie} setRedirect={setRedirect} />
+                <DisplayMovie authUser={authUser} setMovie={setMovie} addToBooking={addToBooking} movie={movie} setDeletedMovie={setDeletedMovie} setRedirect={setRedirect} />
             
             </div>
         )

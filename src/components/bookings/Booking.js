@@ -5,16 +5,17 @@ import TableFooter from './TableFooter'
 import './booking.css';
 import { Link } from 'react-router-dom';
 
-const Booking = ({myBooking:bookings, removeToBooking, clearAllBookings, setMyBooking, updateBooking}) => {
+const Booking = ({myBooking:bookings, removeToBooking, clearAllBookings, setMyBooking, updateBooking }) => {
 
-    console.log("!!! = ", updateBooking)
+    console.log("!!! = ", updateBooking) 
 
     console.log(bookings)
     const bookingList = bookings.bookings.map(booking => {
         return (
-            <TableBody key={booking._id} booking={booking} setMyBooking={setMyBooking} removeToBooking={removeToBooking} updateBooking={updateBooking}/>
+            <TableBody key={booking._id} booking={booking} setMyBooking={setMyBooking}  updateBooking = { updateBooking } removeToBooking={removeToBooking} />
             
-        ) 
+        )
+       
     })
 
 

@@ -14,20 +14,23 @@ const TableBody = ({ booking, removeToBooking, setMyBooking, updateBooking }) =>
     
 
 
-    const handleChange = e => {
-        setMyBooking({
-            startDate: startDate.toDateString()
-        })
+    // const handleChange = e => {
+    //     setMyBooking({
+    //         startDate: startDate.toDateString()
+    //     })
         
-      setHours({
-        [e.target.name] : e.target.value 
-      })
+    //   setHours({
+    //     [e.target.name] : e.target.value 
+    //   })
 
-    }
+    // }
     console.log(hours)
 
-    const onDateChange = date => {
-        updateBooking({...booking, date})
+    const onDateChange = ( date ) => {
+        updateBooking({ ...booking, date })
+    //     setHours({
+    //     [e.target.name] : e.target.value 
+    //   })
     }
 
     const onQuantityChange = (e) => {
@@ -47,10 +50,9 @@ const TableBody = ({ booking, removeToBooking, setMyBooking, updateBooking }) =>
                     min="1" 
                     name="quantity" 
                     class="form-control form-control-sm"
-                    value={booking.quantity}
-                    // wrong
-                    // handleChange={onQuantityChange} 
-                    onChange={onQuantityChange}     
+                    value={booking.quantity} 
+                    onChange={onQuantityChange} 
+                    // onDateChange={onDateChange}
                 />                 
               </div>
             </form>
@@ -59,9 +61,11 @@ const TableBody = ({ booking, removeToBooking, setMyBooking, updateBooking }) =>
                 <DatePicker
     		 		selected={booking.date}
     		 		onChange={onDateChange}
-    		 		timeInputLabel="Time:"
-    		 		dateFormat="MM/dd/yyyy h:mm aa"
-                    showTimeInput
+    		 		// timeInputLabel="Time:"
+    		 		// dateFormat="MM/dd/yyyy h:mm aa"
+                    // showTimeInput
+                    showTimeSelect
+                    dateFormat="Pp"
                    
     		 	/>
             </td>

@@ -35,7 +35,6 @@ console.log("authUser=", authUser)
         bookings: []
   })
 
-
   const updateBooking = (booking) => {
 
     console.log("b1 = ", booking)
@@ -48,7 +47,6 @@ console.log("authUser=", authUser)
     const newArray = myBooking.bookings
     newArray[matchedIndex].date = booking.date
     newArray[matchedIndex].quantity = booking.quantity
-
     setMyBooking({
       bookings: newArray
     })
@@ -64,7 +62,7 @@ console.log("authUser=", authUser)
           price,
           movieId: id,
           quantity: quantity,
-          date, date
+          date
         }
       ]
     })
@@ -86,7 +84,7 @@ const clearAllBookings = () => {
     }
 
 
-  useEffect(() => {
+   useEffect(() => {
     let appState = localStorage["appSate"];
     if (appState) {
       fetch("https://booking-movie-backend.herokuapp.com/users/profile", {
@@ -137,12 +135,12 @@ const clearAllBookings = () => {
 
         {/* Movies Catalog */}
         <Route exact path='/movies'>
-            <Movie  addToBooking={addToBooking} />
+            <Movie  authUser={authUser} addToBooking={addToBooking} />
         </Route>
 
         {/* Booking */}
         <Route exact path='/booking'>
-              <Booking myBooking={myBooking} setMyBooking={setMyBooking} removeToBooking={removeToBooking} updateBooking={updateBooking} clearAllBookings={clearAllBookings}/>
+              <Booking myBooking={myBooking} setMyBooking={setMyBooking}  updateBooking={updateBooking} removeToBooking={removeToBooking} clearAllBookings={clearAllBookings}/>
         </Route>
 
         {/* Transaction */}
@@ -157,7 +155,7 @@ const clearAllBookings = () => {
 
         {/* Single Movie Detail */}
         <Route exact path='/movies/:id'>
-          <ViewDetail />
+          <ViewDetail authUser={authUser}/>
         </Route>
 
         {/* Edit Movie */}

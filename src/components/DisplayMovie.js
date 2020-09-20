@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import AdminControl from './AdminControl';
 import './movie.css';
 
-const DisplayMovie = ({movie, withDescription, setRedirect, setDeletedMovie, addToBooking }) => {
+const DisplayMovie = ({movie, withDescription, setRedirect, setDeletedMovie, addToBooking, authUser }) => {
     
 
 
@@ -25,10 +25,10 @@ const DisplayMovie = ({movie, withDescription, setRedirect, setDeletedMovie, add
   
       
     return (
-         <>
+        <div className="card">
             <img src={`https://booking-movie-backend.herokuapp.com/${movie.image}`}
                 className="w-100" />
-            
+            <div className="card-body">
             <h5 id="text-white">{movie.name}</h5>
             <p>&#8369;{movie.price}</p>
             {
@@ -64,9 +64,9 @@ const DisplayMovie = ({movie, withDescription, setRedirect, setDeletedMovie, add
                 </div>
             </div>
             
-            <AdminControl setDeletedMovie={setDeletedMovie} setRedirect={setRedirect} id={movie._id} />
-            
-        </>
+            <AdminControl authUser={authUser} setDeletedMovie={setDeletedMovie} setRedirect={setRedirect} id={movie._id} />
+            </div>
+        </div>
     );
 }
 
