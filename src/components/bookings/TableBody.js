@@ -30,6 +30,11 @@ const TableBody = ({ booking, removeToBooking, setMyBooking, updateBooking }) =>
         updateBooking({...booking, date})
     }
 
+    const onQuantityChange = (e) => {
+        console.log("quantity = ", e.target.value)
+        updateBooking({...booking, quantity: e.target.value})
+    }
+
 
     return (
         <tr>
@@ -43,7 +48,9 @@ const TableBody = ({ booking, removeToBooking, setMyBooking, updateBooking }) =>
                     name="quantity" 
                     class="form-control form-control-sm"
                     value={booking.quantity}
-                    handleChange={handleChange}      
+                    // wrong
+                    // handleChange={onQuantityChange} 
+                    onChange={onQuantityChange}     
                 />                 
               </div>
             </form>

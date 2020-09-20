@@ -47,14 +47,11 @@ console.log("authUser=", authUser)
 
     const newArray = myBooking.bookings
     newArray[matchedIndex].date = booking.date
+    newArray[matchedIndex].quantity = booking.quantity
 
     setMyBooking({
       bookings: newArray
     })
-
-    setTimeout(() => {
-console.log("updated result = ", myBooking)
-    }, 1000)
   }
   
 
