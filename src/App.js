@@ -34,9 +34,31 @@ console.log("authUser=", authUser)
         startDate: "",
         bookings: []
   })
+
+
+  const updateBooking = (booking) => {
+
+    console.log("b1 = ", booking)
+    console.log("b2 = ", myBooking)
+
+    const matchedIndex = myBooking.bookings.findIndex(b => 
+      b.movieId === booking.movieId
+    )
+
+    const newArray = myBooking.bookings
+    newArray[matchedIndex].date = booking.date
+
+    setMyBooking({
+      bookings: newArray
+    })
+
+    setTimeout(() => {
+console.log("updated result = ", myBooking)
+    }, 1000)
+  }
   
 
-   const addToBooking = (id, quantity, name, price) => {
+   const addToBooking = (id, quantity, name, price, date) => {
     setMyBooking({
       bookings: [
         ...myBooking.bookings,
@@ -44,7 +66,8 @@ console.log("authUser=", authUser)
           name,
           price,
           movieId: id,
-          quantity: quantity
+          quantity: quantity,
+          date, date
         }
       ]
     })
@@ -77,12 +100,13 @@ const clearAllBookings = () => {
         .then(res => res.json())
         .then(data => {
           if (data._id) {
+            console.log("data = ", data)
             setAuthUser({
               isAuth: true,
-              _id: data._id,
-              fullname: data.fullname,
-              email: data.email,
-              isAdmin: data.isAdmin
+              _id: data.user._id,
+              fullname: data.user.fullname,
+              email: data.user.email,
+              isAdmin: data.user.isAdmin
             });
           }
         })
@@ -121,7 +145,7 @@ const clearAllBookings = () => {
 
         {/* Booking */}
         <Route exact path='/booking'>
-              <Booking myBooking={myBooking} setMyBooking={setMyBooking} removeToBooking={removeToBooking} clearAllBookings={clearAllBookings}/>
+              <Booking myBooking={myBooking} setMyBooking={setMyBooking} removeToBooking={removeToBooking} updateBooking={updateBooking} clearAllBookings={clearAllBookings}/>
         </Route>
 
         {/* Transaction */}

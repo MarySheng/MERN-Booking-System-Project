@@ -3,8 +3,9 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
 
-const TableBody = ({ booking, removeToBooking, setMyBooking }) => {
-    console.log("booking=", booking)
+const TableBody = ({ booking, removeToBooking, setMyBooking, updateBooking }) => {
+    console.log("booking inside table body=", booking)
+    console.log("123 = ", updateBooking)
 
     const [startDate, setStartDate] = useState(new Date());
     console.log(startDate)
@@ -24,6 +25,10 @@ const TableBody = ({ booking, removeToBooking, setMyBooking }) => {
 
     }
     console.log(hours)
+
+    const onDateChange = date => {
+        updateBooking({...booking, date})
+    }
 
 
     return (
@@ -45,8 +50,8 @@ const TableBody = ({ booking, removeToBooking, setMyBooking }) => {
             </td>
             <td>
                 <DatePicker
-    		 		selected={startDate}
-    		 		onChange={date => setStartDate(date)}
+    		 		selected={booking.date}
+    		 		onChange={onDateChange}
     		 		timeInputLabel="Time:"
     		 		dateFormat="MM/dd/yyyy h:mm aa"
                     showTimeInput

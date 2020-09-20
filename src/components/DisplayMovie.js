@@ -18,7 +18,7 @@ const DisplayMovie = ({movie, withDescription, setRedirect, setDeletedMovie, add
     
 
      const onBooking = () => {
-     addToBooking(movie._id, quantity, movie.name, movie.price)
+     addToBooking(movie._id, quantity, movie.name, movie.price, new Date())
      setRedirect(true)
     }
    

@@ -67,9 +67,9 @@ const LoginForm = (props) => {
 					localStorage["appState"] = data.token
 					props.setAuthUser({
 						isAuth: true,
-						fullname: data.fullname,
-						email:data.email,
-						isAdmin: data.isAdmin
+						fullname: data.user.fullname,
+						email:data.user.email,
+						isAdmin: data.user.isAdmin
 					})
 					setIsSuccess(true)
 				}else {

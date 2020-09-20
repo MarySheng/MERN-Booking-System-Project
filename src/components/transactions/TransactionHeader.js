@@ -66,7 +66,9 @@ const TransactionHeader = ({ transaction, authUser }) => {
 
 	  if(isRedirect) {
         return <Redirect to="/transactions" />
-    }
+	}
+	
+	console.log("authUser = ", authUser)
 
 
     return (
@@ -95,7 +97,7 @@ const TransactionHeader = ({ transaction, authUser }) => {
             <tr>
 					<td className="font-weight-bold">Status</td>
 					{
-						authUser && authUser.isAdmin ?
+						(authUser && authUser.isAdmin) ?
 							<td>
 								<select onChange={handleChange}>
 									<option value={false}>Pending</option>
