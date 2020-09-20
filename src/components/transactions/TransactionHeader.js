@@ -70,6 +70,8 @@ const TransactionHeader = ({ transaction, authUser }) => {
 	
 	console.log("authUser = ", authUser)
 
+	console.log("transaction = ", transaction)
+
 
     return (
         <table className="table">
@@ -90,7 +92,7 @@ const TransactionHeader = ({ transaction, authUser }) => {
             {/* Booking date */}
             <tr>
                 <td className="font-weight-bold">Booking Date</td>
-                    <td>{transaction.startDate}</td>
+                    <td>{transaction.updatedAt && transaction.updatedAt.substring(0,10)}</td>
             </tr>
 
            {/* status */}
