@@ -23,13 +23,11 @@ const Navbar = ({authUser}) => {
                 <NavLink exact to='/create' className="nav-link">Add Movie</NavLink>
 
               </li>
-              {/* : ""
-          } */}
+               {/* : ""
+          }  */}
 
             
           
-
-                 
       <li className="nav-item">
             <NavLink className="nav-link" exact to="/movies">
               <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-camera-reels" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

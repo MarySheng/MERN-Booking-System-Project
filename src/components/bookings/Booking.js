@@ -5,12 +5,12 @@ import TableFooter from './TableFooter'
 import './booking.css';
 import { Link } from 'react-router-dom';
 
-const Booking = ({myBooking:bookings, removeToBooking, clearAllBookings}) => {
+const Booking = ({myBooking:bookings, removeToBooking, clearAllBookings, setMyBooking}) => {
 
     console.log(bookings)
     const bookingList = bookings.bookings.map(booking => {
         return (
-            <TableBody key={booking._id} booking={booking} removeToBooking={removeToBooking} />
+            <TableBody key={booking._id} booking={booking} setMyBooking={setMyBooking} removeToBooking={removeToBooking} />
             
         ) 
     })
@@ -41,7 +41,7 @@ const Booking = ({myBooking:bookings, removeToBooking, clearAllBookings}) => {
         {/* TABLE BOOKING */}
         <div class="row">
             <div class="col-12 col-md-9 mx-auto">
-                <table class="table">
+                <table class="table table-reponsive">
                      {/* TABLE HEAD */}
                     <thead>
                         <TableHead />

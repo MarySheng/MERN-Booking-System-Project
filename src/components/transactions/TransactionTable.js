@@ -15,13 +15,13 @@ const TransactionTable = ({ bookings}) => {
                 <thead>
                     <tr>
                         {/* Name */}
-                        <th scope="col">Name</th>
+                        <th scope="col" className="text-dark">Name</th>
                         {/* price */}
-                        <th scope="col">Price</th>
+                        <th scope="col" className="text-dark">Price</th>
                         {/* quantity */}
-                        <th scope="col">Quantiy</th>
+                        <th scope="col" className="text-dark">Quantiy</th>
                         {/* subtotal */}
-                        <th scope="col">Subtotal</th>
+                        <th scope="col" className="text-dark">Subtotal</th>
                            
                     </tr>
                 </thead>

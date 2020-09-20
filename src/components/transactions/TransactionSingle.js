@@ -3,7 +3,8 @@ import TransactionHeader from './TransactionHeader';
 import TransactionTable from './TransactionTable';
 import {useParams} from 'react-router-dom';
 
-const TransactionSingle = (props) => {
+const TransactionSingle = ({authUser}) => {
+
     const { id } = useParams();
 
     const [transaction, setTransaction] = useState({
@@ -38,7 +39,7 @@ const TransactionSingle = (props) => {
 
                 {
                     !loading ? 
-                    <TransactionHeader transaction={transaction} /> 
+                    <TransactionHeader authUser={authUser} transaction={transaction} /> 
         
                     : "Loading..."
                 } 

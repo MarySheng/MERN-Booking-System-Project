@@ -22,14 +22,16 @@ import {
 
 function App() {
 
+  
   const [authUser, setAuthUser] = useState({
     isAuth: false,
     _id: "",
     fullname: "",
     email: ""
   });
-
+console.log("authUser=", authUser)
   const [myBooking, setMyBooking] = useState({
+        startDate: "",
         bookings: []
   })
   
@@ -69,7 +71,7 @@ const clearAllBookings = () => {
     if (appState) {
       fetch("https://booking-movie-backend.herokuapp.com/users/profile", {
         headers: {
-          "Authorization" : `Bearer ${appState}`
+          "Authorization": `Bearer ${appState}`
         }
       })
         .then(res => res.json())
@@ -119,7 +121,7 @@ const clearAllBookings = () => {
 
         {/* Booking */}
         <Route exact path='/booking'>
-              <Booking myBooking={myBooking} removeToBooking={removeToBooking} clearAllBookings={clearAllBookings}/>
+              <Booking myBooking={myBooking} setMyBooking={setMyBooking} removeToBooking={removeToBooking} clearAllBookings={clearAllBookings}/>
         </Route>
 
         {/* Transaction */}
@@ -129,7 +131,7 @@ const clearAllBookings = () => {
 
         {/* Transaction Single */}
         <Route exact path='/transactions/:id'>
-          <TransactionSingle />
+          <TransactionSingle authUser={authUser} />
         </Route>
 
         {/* Single Movie Detail */}

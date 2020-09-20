@@ -27,7 +27,7 @@ const Transaction = () => {
             <li className="list-group-item" key={transaction._id}>
                 <Link to={`/transactions/${transaction._id}`}>
                     {transaction._id + " "}
-                    <span className="badge badge-info"> 
+                    <span className="badge badge-info "> 
                     {
                         transaction.isComplete ? "Complete" : "Pending"
                     }                   

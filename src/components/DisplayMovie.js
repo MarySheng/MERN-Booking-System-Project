@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import MovieInput from './../components/inputs/MovieInput';
-import { Link, useParams} from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import AdminControl from './AdminControl';
 import './movie.css';
 
@@ -36,7 +36,7 @@ const DisplayMovie = ({movie, withDescription, setRedirect, setDeletedMovie, add
                 <p id="text-white">{movie.description}</p>
                 : <> </>    
             }
-            
+
             
             <MovieInput
                 type="number"
@@ -45,11 +45,12 @@ const DisplayMovie = ({movie, withDescription, setRedirect, setDeletedMovie, add
                 min="1"
                 handleChange={handleChange}
                 id="qty"            
-                />          
+            />   
+            
             
             <div className="row">
                 <div className="col col-md-6">
-                    <Link id="bookNow" to='booking'  onClick={onBooking} className="btn btn-success">Book Now</Link>
+                    <Link id="bookNow" to='/booking'  onClick={onBooking} className="btn btn-success">Book Now</Link>
                     
                 </div>
                 <div className="col col-md-6">

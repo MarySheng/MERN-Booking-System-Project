@@ -1,28 +1,60 @@
-import React from 'react';
+import React, {useState} from 'react';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-const TableBody = ({ booking, removeToBooking }) => {
+
+const TableBody = ({ booking, removeToBooking, setMyBooking }) => {
     console.log("booking=", booking)
+
+    const [startDate, setStartDate] = useState(new Date());
+    console.log(startDate)
+
+    const [hours, setHours] = useState(0);
+    
+
+
+    const handleChange = e => {
+        setMyBooking({
+            startDate: startDate.toDateString()
+        })
+        
+      setHours({
+        [e.target.name] : e.target.value 
+      })
+
+    }
+    console.log(hours)
+
 
     return (
         <tr>
-            <td scope="row">{booking.name}</td>
+            <td scope="row" class="text-white">{booking.name}</td>
             <td>                
             <form>
-            <div class="input-group mb-3">
+                <div className="input-group mb-3">    
                  <input 
                     type="number"
                     min="1" 
                     name="quantity" 
                     class="form-control form-control-sm"
                     value={booking.quantity}
-               />                                         
-                
-            </div>
-        </form>
-
-        </td>
-            <td>&#8369; {booking.price}</td>
-            <td>&#8369;{booking.price*booking.quantity}</td>
+                    handleChange={handleChange}      
+                />                 
+              </div>
+            </form>
+            </td>
+            <td>
+                <DatePicker
+    		 		selected={startDate}
+    		 		onChange={date => setStartDate(date)}
+    		 		timeInputLabel="Time:"
+    		 		dateFormat="MM/dd/yyyy h:mm aa"
+                    showTimeInput
+                   
+    		 	/>
+            </td>
+            <td class="text-white">&#8369; {booking.price}</td>
+            <td class="text-white">&#8369;{booking.price*booking.quantity}</td>
         <td>
             <button onClick={() => removeToBooking(booking.movieId)} id="delete" class="btn btn-sm btn-outline-danger text-white">
                 <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-trash" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
