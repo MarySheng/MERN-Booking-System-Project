@@ -5,7 +5,7 @@ const TableRow = ({booking}) => {
          <tr>
             <td>{booking.movieId.name}</td>
             <td>{booking.date && booking.date.substring(0,10)}</td>
-            <td>&#8369; {booking.price}</td>
+            
         <td>
     <form>
                                    
@@ -20,7 +20,8 @@ const TableRow = ({booking}) => {
             </div>
          </form>
 
-        </td>
+            </td>
+            <td>&#8369; {booking.price}</td>
             <td>{booking.subtotal}</td>
 
     </tr>

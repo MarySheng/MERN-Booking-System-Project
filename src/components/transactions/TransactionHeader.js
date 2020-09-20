@@ -88,10 +88,10 @@ const TransactionHeader = ({ transaction, authUser }) => {
                             
 
             {/* Booking date */}
-            <tr>
+            {/* <tr>
                 <td className="font-weight-bold">Booking Date</td>
                     <td>{transaction.updatedAt && transaction.updatedAt.substring(0,10)}</td>
-            </tr>
+            </tr> */}
 
            {/* status */}
             <tr>
@@ -103,7 +103,7 @@ const TransactionHeader = ({ transaction, authUser }) => {
 									<option value={false}>Pending</option>
 									<option value={true}>Complete</option>
 								</select>
-								<button onClick={handleSubmit} className="btn btn-primary btn-sm ml-2 text-uppercase">Update</button>
+								<button onClick={handleSubmit} className="btn btn-info btn-sm ml-2 text-uppercase">Update</button>
 							</td>
 							:
 							<td>{transaction.isComplete ? "Completed" : "Pending"}</td>
