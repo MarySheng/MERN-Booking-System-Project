@@ -87,7 +87,7 @@ const clearAllBookings = () => {
 
 
   useEffect(() => {
-    let appState = localStorage["appSate"];
+    let appState = localStorage["appState"];
     if (appState) {
       fetch("https://booking-movie-backend.herokuapp.com/users/profile", {
         headers: {
@@ -100,15 +100,17 @@ const clearAllBookings = () => {
             console.log("data = ", data)
             setAuthUser({
               isAuth: true,
-              _id: data.user._id,
-              fullname: data.user.fullname,
-              email: data.user.email,
-              isAdmin: data.user.isAdmin
+              _id: data._id,
+              fullname: data.fullname,
+              email: data.email,
+              isAdmin: data.isAdmin
             });
           }
         })
     }
   },[])
+
+  console.log("authUser = ", authUser)
  
 
   return (
