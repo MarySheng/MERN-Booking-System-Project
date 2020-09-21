@@ -64,8 +64,8 @@ const TableBody = ({ booking, removeToBooking, setMyBooking, updateBooking }) =>
     		 		// timeInputLabel="Time:"
     		 		// dateFormat="MM/dd/yyyy h:mm aa"
                     // showTimeInput
-                    showTimeSelect
-                    dateFormat="Pp"
+                    // showTimeSelect
+                    // dateFormat="Pp"
                    
     		 	/>
             </td>
