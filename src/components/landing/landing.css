@@ -43,3 +43,48 @@ html {
       #button {
         animation: glowing 1300ms infinite;
       }
+
+
+      /* About */
+      #about{
+        height: 80vh;
+      }
+      #about h1 {
+        font-family: 'Arvo', serif;
+        margin-top: 50px;
+      }
+
+       #about h3 {
+        font-family: 'Arvo', serif;
+        margin-top: 50px;
+      }
+
+       #movieFooter {
+         height: 80vh
+       }
+
+      #movieFooter img {
+          width: 50%;
+          height: 50%;
+      }
+
+      #movieFooter hr {
+        width: 5rem;
+        border: none;
+        height: 2px;
+        background-color: #00BCD4;
+      }
+
+      #movieFooter h6 {
+        margin-top: 20px;
+        font-family: 'Arvo', serif;
+      }
+
+     #movieFooter #bookTicket {
+          margin-top: 60px;
+     }
+
+
+      #movieFooter #latestMovie {
+        margin-top: 50px;
+      }

@@ -1,6 +1,7 @@
 import React from 'react';
 import ResponsiveCarousel from './ResponsiveCarousel';
 import Footer from './../footer/Footer';
+import About from './About';
 
 
 const Landing = () => {
@@ -14,7 +15,7 @@ const Landing = () => {
                 </div>
             </div>
         </div>
-        
+        <About />
         <Footer />
         </>
     );

@@ -7,8 +7,9 @@ const Navbar = ({authUser}) => {
 
   return (
    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <NavLink id="icon" className="navbar-brand" exact to="/">
+      <NavLink id="icon" className="navbar-brand nav-item" exact to="/">
         <img src="https://www.iconfinder.com/data/icons/cat-7/512/cat_sticker_emoji_emoticon_popcorn_movie-512.png" />
+        WatchItNow
       </NavLink>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>

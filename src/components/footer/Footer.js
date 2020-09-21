@@ -10,7 +10,7 @@ const Footer = () => {
                      <div className="col">
                         <div className="text-center">
                         <p>
-                            Mary.diolas : Booking System Copyright &copy; <span id="year">2020</span> 
+                            Mary.diolas : Movie booking System Copyright &copy; <span id="year">2020</span> 
                             </p>
                         </div>
                     </div>
