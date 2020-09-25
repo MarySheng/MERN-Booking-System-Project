@@ -16,6 +16,7 @@ const TransactionSingle = ({authUser}) => {
 
 
     const [loading, setLoading] = useState(true);
+    const [isAutherized, setIsAutherized] = useState(true);
 
     useEffect(() => {
         fetch(`https://booking-movie-backend.herokuapp.com/transactions/${id}`, {
@@ -23,14 +24,29 @@ const TransactionSingle = ({authUser}) => {
                 "Authorization": `Bearer ${localStorage['appState']}`
             }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 401) {
+                    setIsAutherized(false)
+                } else {
+                    setIsAutherized(true)
+                }
+                return res.json()
+            })
             .then(data => {
                 if (data._id) {
                     setLoading(false)
                 } 
                 setTransaction(data)
+
+                if (!authUser.isAdmin && data.customerId.email !== authUser.email) {
+                    setIsAutherized(false)
+                }
             })
-    }, []);
+    }, [authUser]);
+
+    if (!isAutherized) {
+        return <div>403 unauthorized</div>
+    }
 
     return (
          <div id="trans-container" className="container">
